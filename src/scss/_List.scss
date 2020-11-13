@@ -1,0 +1,19 @@
+.List{
+
+.Card{
+  width: 45%;
+  float: left;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 2px;
+  margin-bottom: 22px;
+  margin: 2%;
+  .Flex{
+    display: flex;
+    justify-content: space-between;
+  button{
+    width: 40%;
+  }
+  }
+}
+}

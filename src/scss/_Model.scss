@@ -1,0 +1,24 @@
+.ModelHolder{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+.Model{
+  min-width: 100%;
+  min-height: 241px;
+  text-align: center;
+  background: rgb(255, 255, 255);
+  
+  
+  
+  p{
+    margin: 11px;
+  }
+  button{
+    color: white;
+    
+    }
+}
+.test{
+  margin: 2%
+}
+}
