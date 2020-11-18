@@ -1,11 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
+import Overlay from './Overlay';
 import firebaseDb from "../firebase";
+import Icon from '@material-ui/core/Icon';
+import AddPersonForm from "./AddPerson";
 
 
-export default function List() {
+
+export default function List(props) {
 
     var [RelatedPersonObjects,setRelatedPersonObjects] = useState({})
     var [CurrentId,setCurrentId] = useState('')
+    
+    const [isToggled, setToggled] =  useState(false);
+    const toggleTrueFalse = () => setToggled(!isToggled);
+
+    const [isToggles, setToggles] = useState(false);
+    const toggles = () => setToggles(!isToggles);
+  
 
     useEffect(()=>{
       firebaseDb.child('RelatedPersons').on('value',snapshot=>{
@@ -20,8 +31,10 @@ export default function List() {
    
       })
      },[])
-  
-    const addOrEdit = obj=>{
+
+//////////////Add Or Edit Record//////////////////
+
+     const addOrEdit = obj=>{
       if(CurrentId === '')
       firebaseDb.child('RelatedPersons').push(
       obj,
@@ -45,6 +58,10 @@ export default function List() {
         )
     }
 
+/////////////////////End///////////////////////////
+
+//////////////Delete Record///////////////////////
+
     const onDelete = key=> {
       if (window.confirm('Are You Sure')) {
         firebaseDb.child(`RelatedPersons/${key}`).remove(
@@ -57,39 +74,59 @@ export default function List() {
           )
       }
     }
-  
+
+/////////////////////End///////////////////////////
+
+
   return (
-    
-    <div className="List">
-      
-      <div>
    
+    <Fragment>
+      
+    <div className="List" >
+   
+      <div>
+     
    {
     
      Object.keys(RelatedPersonObjects).map(id=>{
-       return <div key={id}>
+       
+       return <div className="Mobile" key={id}>
          
-         <div className="Card"> <h1> {RelatedPersonObjects[id].FirstName} {RelatedPersonObjects[id].LastName}</h1>
-         <br/>
-         {RelatedPersonObjects[id].Relationship}
-         <br/>
+         <div className="Card"> <p className='Name'> {RelatedPersonObjects[id].FirstName} {RelatedPersonObjects[id].LastName}</p>
+         
+         <p className='Relatioship'> {RelatedPersonObjects[id].Relationship}</p>
+        
          <div className="Flex" >
+
          <button 
           type="button" 
-          onClick={()=>{setCurrentId(id)}} 
-          className="Green">
+          onClick={()=>setCurrentId(id)} 
+          className="Green Edit">
           Edit</button>
+          
           <button 
           type="button" 
+          onClick={toggles}
+          className="Dlt">
+          <Icon>keyboard_arrow_down</Icon>
+          </button>
+          {isToggles &&  <button 
+          type="button" 
           onClick={()=>{onDelete(id)}} 
-          className="Green">
-          Delete</button>
+          className="D">
+          <Icon>delete</Icon>  
+          Delete</button> }
+         
          </div>
+
+         <br/>
+         
          </div>
          
-         
+        
        </div>
        
+      
        
        
      })
@@ -97,7 +134,23 @@ export default function List() {
    }
 
 </div>
-   </div>
+<div className="ModelCard">
+     
+      {isToggled && <Overlay/>}
+        <p>You haven’t added any related persons</p>
+        <div className="Flex Green  ">
+        <Icon className="icon">add_circle</Icon>
+          <button type="button" onClick={toggleTrueFalse} className=" Unset Green">
+          Add person
+          </button>
+          </div>
+
+  </div>
+  </div>
+
+  
+
+</Fragment>
   )
 }
 

@@ -1,15 +1,22 @@
+
+
 @use '_Reset';
+@use '_LeftNav';
 @use '_Overlay';
 @use '_AddPerson';
+@use '_AddPersonForm';
 @use '_Model';
 @use '_List';
 
 $myColor:rgb(249, 249, 249);
 $myColor2: white;
 
+button{
+  outline:none!important;
+}
 html,body{
-  height: 100%;
-  width:100%;
+  height: 100vh;
+  width:100vw;
   overflow: hidden;
   font-family: arial;
   -webkit-font-smoothing: antialiased;
@@ -30,12 +37,7 @@ color:#ffffff;
   max-width:100%;
   display: flex;
   overflow-y: hidden;
-}
-
-.LeftNav {
-  background-color: $myColor;
-  width:240px;
-  min-height: 100%;
+  
 }
 
 .Right-Section {
@@ -45,15 +47,18 @@ color:#ffffff;
   display: flex;
   justify-content: center;
   overflow-y: scroll;
-
+ 
 }
 .Inner-Right-Section {
   border-radius: 4px;
-  border-right: 1px solid rgb(224, 224, 224);
-  border-left: 1px solid rgb(224, 224, 224);
-  height: 2850px;
-  width: 93%;
- 
+  border: 1px solid rgb(224, 224, 224);
+  height: fit-content;
+  width: 95%;
+  @media (min-width:0px) and (max-width:768px){
+    width: 100%;
+    margin-left: 24px;
+    margin-right: 24px;
+}
 }
 
 .Form{
@@ -62,9 +67,16 @@ color:#ffffff;
   justify-content: center;
   margin: 0 auto;
   width: auto;
+  h2{
+    font-weight: bold;
+  }
+ 
+  @media (min-width:0px) and (max-width:450px){
+    margin: unset;
+    padding: 10px;
 }
 
-
+}
 
 .clear{
   margin: 0px;
@@ -77,7 +89,9 @@ height: 32px;
 background: rgb(255, 255, 255);
 border: 1px solid rgb(217, 217, 217);
 border-radius: 2px;
-
+@media (min-width:0px) and (max-width:768px){
+    width: unset;
+}
 }
 
 label{
@@ -93,7 +107,8 @@ letter-spacing: 0px;
 .checkbox,.radio{
 height: 16px;
 width: 16px;
-
+margin: 0;
+margin-right: 5px;
 }
 
 .Form-Group{
@@ -134,8 +149,15 @@ width: 100px;
 background: rgb(0, 197, 163);
 border-radius: 0px;
 height: 32px;
-width: 130px;
 border: none;
 margin: 0 auto;
 }
 
+.GreenSubmit{
+  background: rgb(0, 197, 163)!important;
+  border-radius: 0px;
+  height: 32px!important;
+  width: 130px!important;
+  border: none;
+  color: #ffffff;
+  }
