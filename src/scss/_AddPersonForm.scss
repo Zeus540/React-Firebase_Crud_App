@@ -10,11 +10,7 @@
       width: 90%;
     
   }
-  .Cancel{
-    background-color: unset!important;
-    color: #00c5a3!important;
-    width: unset!important;
-  }
+ 
   label{
     text-align: left!important;
     margin-bottom: 5%;
@@ -95,7 +91,7 @@
     color: rgb(0, 197, 163);
     .Cancel{
       display: flex;
-
+      width: auto;
       align-items: center;
       background: none;
       color: #00c5a3;
@@ -115,5 +111,6 @@
       width: 156px;
       margin: 0px;
       color: white;
+      padding: 0px;
     }
   }

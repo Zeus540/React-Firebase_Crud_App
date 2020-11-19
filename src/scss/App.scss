@@ -36,6 +36,16 @@ max-height: 72px;
 background: rgb(24, 48, 51);
 color:#ffffff;
 
+  @media (min-width:0px) and (max-width:425px){
+    font-size: 14px;
+    .PL-35 {
+      padding-left: 15px;
+  }
+  li{
+    font-size: 14px;
+  }
+  }
+
 }
 
 .Container{
