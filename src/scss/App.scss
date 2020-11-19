@@ -25,6 +25,8 @@ html,body{
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   position: relative;
+  font-size: 14px;
+  line-height: 1.5715;
 }
 
 
@@ -87,13 +89,18 @@ color:#ffffff;
 
 input,select{
 width: 420px;
-height: 32px;
+height: 35px;
 background: rgb(255, 255, 255);
 border: 1px solid rgb(217, 217, 217);
 border-radius: 2px;
+
 @media (min-width:0px) and (max-width:768px){
     width: unset;
 }
+}
+
+input{
+  padding: 10px;
 }
 
 label{
