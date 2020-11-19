@@ -2,7 +2,7 @@ import React, { useState, useEffect, Fragment } from "react";
 import Overlay from './Overlay';
 import firebaseDb from "../firebase";
 import Icon from '@material-ui/core/Icon';
-import AddPersonForm from "./AddPersonForm";
+
 
 
 
@@ -78,19 +78,7 @@ export default function List(props) {
 
 /////////////////////End///////////////////////////
 
-const displayDlt = e => {
  
-  var x = document.getElementsByClassName('Delete');
-  if (x.style.display === "none") {
-    x.style.display = "Flex";
-   
-  } else {
-    x.style.display = "none";
-  
-  }
-  }
- 
-
   return (
    
     <Fragment>

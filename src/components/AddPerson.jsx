@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import AddPersonForm from "./AddPersonForm";
-import Icon from '@material-ui/core/Icon';
+
 import firebaseDb from "../firebase";
-import ListSidebar from "./ListSidebar";
+
 const AddPerson = () => {
 
   var [RelatedPersonObjects,setRelatedPersonObjects] = useState({})
@@ -46,18 +46,7 @@ const AddPerson = () => {
       )
   }
   
-  const onDelete = key=> {
-    if (window.confirm('Are You Sure')) {
-      firebaseDb.child(`RelatedPersons/${key}`).remove(
-        err =>{
-          if (err)
-              console.log(err)
-          else
-              setCurrentId('')
-          }
-        )
-    }
-  }
+
 
   return(
     
