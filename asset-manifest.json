@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/%E2%80%9Chttp://Zeus540.github.io/React-Firebase_Crud_App/static/css/main.bb539203.chunk.css",
-    "main.js": "/%E2%80%9Chttp://Zeus540.github.io/React-Firebase_Crud_App/static/js/main.282531df.chunk.js",
-    "main.js.map": "/%E2%80%9Chttp://Zeus540.github.io/React-Firebase_Crud_App/static/js/main.282531df.chunk.js.map",
-    "runtime-main.js": "/%E2%80%9Chttp://Zeus540.github.io/React-Firebase_Crud_App/static/js/runtime-main.336178a5.js",
-    "runtime-main.js.map": "/%E2%80%9Chttp://Zeus540.github.io/React-Firebase_Crud_App/static/js/runtime-main.336178a5.js.map",
-    "static/css/2.ea9b1cc9.chunk.css": "/%E2%80%9Chttp://Zeus540.github.io/React-Firebase_Crud_App/static/css/2.ea9b1cc9.chunk.css",
-    "static/js/2.5485db72.chunk.js": "/%E2%80%9Chttp://Zeus540.github.io/React-Firebase_Crud_App/static/js/2.5485db72.chunk.js",
-    "static/js/2.5485db72.chunk.js.map": "/%E2%80%9Chttp://Zeus540.github.io/React-Firebase_Crud_App/static/js/2.5485db72.chunk.js.map",
-    "static/js/3.4e5eb528.chunk.js": "/%E2%80%9Chttp://Zeus540.github.io/React-Firebase_Crud_App/static/js/3.4e5eb528.chunk.js",
-    "static/js/3.4e5eb528.chunk.js.map": "/%E2%80%9Chttp://Zeus540.github.io/React-Firebase_Crud_App/static/js/3.4e5eb528.chunk.js.map",
-    "index.html": "/%E2%80%9Chttp://Zeus540.github.io/React-Firebase_Crud_App/index.html",
-    "static/css/2.ea9b1cc9.chunk.css.map": "/%E2%80%9Chttp://Zeus540.github.io/React-Firebase_Crud_App/static/css/2.ea9b1cc9.chunk.css.map",
-    "static/css/main.bb539203.chunk.css.map": "/%E2%80%9Chttp://Zeus540.github.io/React-Firebase_Crud_App/static/css/main.bb539203.chunk.css.map",
-    "static/js/2.5485db72.chunk.js.LICENSE.txt": "/%E2%80%9Chttp://Zeus540.github.io/React-Firebase_Crud_App/static/js/2.5485db72.chunk.js.LICENSE.txt"
+    "main.css": "/%E2%80%9Chttp://Zeus540.github.io/react-firebase-crud-app/static/css/main.bb539203.chunk.css",
+    "main.js": "/%E2%80%9Chttp://Zeus540.github.io/react-firebase-crud-app/static/js/main.282531df.chunk.js",
+    "main.js.map": "/%E2%80%9Chttp://Zeus540.github.io/react-firebase-crud-app/static/js/main.282531df.chunk.js.map",
+    "runtime-main.js": "/%E2%80%9Chttp://Zeus540.github.io/react-firebase-crud-app/static/js/runtime-main.01e40419.js",
+    "runtime-main.js.map": "/%E2%80%9Chttp://Zeus540.github.io/react-firebase-crud-app/static/js/runtime-main.01e40419.js.map",
+    "static/css/2.ea9b1cc9.chunk.css": "/%E2%80%9Chttp://Zeus540.github.io/react-firebase-crud-app/static/css/2.ea9b1cc9.chunk.css",
+    "static/js/2.00140fe2.chunk.js": "/%E2%80%9Chttp://Zeus540.github.io/react-firebase-crud-app/static/js/2.00140fe2.chunk.js",
+    "static/js/2.00140fe2.chunk.js.map": "/%E2%80%9Chttp://Zeus540.github.io/react-firebase-crud-app/static/js/2.00140fe2.chunk.js.map",
+    "static/js/3.4e5eb528.chunk.js": "/%E2%80%9Chttp://Zeus540.github.io/react-firebase-crud-app/static/js/3.4e5eb528.chunk.js",
+    "static/js/3.4e5eb528.chunk.js.map": "/%E2%80%9Chttp://Zeus540.github.io/react-firebase-crud-app/static/js/3.4e5eb528.chunk.js.map",
+    "index.html": "/%E2%80%9Chttp://Zeus540.github.io/react-firebase-crud-app/index.html",
+    "static/css/2.ea9b1cc9.chunk.css.map": "/%E2%80%9Chttp://Zeus540.github.io/react-firebase-crud-app/static/css/2.ea9b1cc9.chunk.css.map",
+    "static/css/main.bb539203.chunk.css.map": "/%E2%80%9Chttp://Zeus540.github.io/react-firebase-crud-app/static/css/main.bb539203.chunk.css.map",
+    "static/js/2.00140fe2.chunk.js.LICENSE.txt": "/%E2%80%9Chttp://Zeus540.github.io/react-firebase-crud-app/static/js/2.00140fe2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.336178a5.js",
+    "static/js/runtime-main.01e40419.js",
     "static/css/2.ea9b1cc9.chunk.css",
-    "static/js/2.5485db72.chunk.js",
+    "static/js/2.00140fe2.chunk.js",
     "static/css/main.bb539203.chunk.css",
     "static/js/main.282531df.chunk.js"
   ]
