@@ -63,45 +63,6 @@ const AddPerson = () => {
     <div className="AddPerson">
       <AddPersonForm {...({addOrEdit,CurrentId,RelatedPersonObjects})}/>
       
-       <div>
-   
-   {
-    
-     Object.keys(RelatedPersonObjects).map(id=>{
-       return <div key={id}>
-         
-         <div className="Card"> 
-          <h1> 
-            {RelatedPersonObjects[id].FirstName} {RelatedPersonObjects[id].LastName}
-          </h1>
-          <br/>
-            {RelatedPersonObjects[id].Relationship}
-          <br/>
-
-          <div className="Flex">
-
-          <button 
-          type="button" 
-          onClick={()=>{setCurrentId(id)}} 
-          className="Green">
-          Edit</button>
-          
-          <button 
-          type="button" 
-          onClick={()=>{onDelete(id)}} 
-          className="Green">
-          Delete</button>
-
-          </div>
-
-          </div>
-        
-       </div>   
-     })
-    
-   }
-
-</div>
     </div>
     
    );

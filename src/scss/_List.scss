@@ -1,5 +1,6 @@
 .List{
 
+
 .Card{
   width: 45%;
   float: left;
@@ -8,12 +9,105 @@
   border-radius: 2px;
   margin-bottom: 22px;
   margin: 2%;
+  min-height: 151px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  .Name{
+    color: rgb(0, 177, 151);
+font-size: 16px;
+font-weight: 300;
+height: 19px;
+letter-spacing: 0px;
+text-decoration: underline;
+line-height: 20px;
+  }
+  .Relatioship{
+    color: rgba(0, 0, 0, 0.47);
+
+font-size: 14px;
+font-weight: normal;
+height: 22px;
+letter-spacing: 0px;
+line-height: 22px;
+
+
+  }
+  @media (min-width:0px) and (max-width:450px){
+    float: unset;
+    width: 100%;
+    margin: 0%;
+    margin-top: 22px;
+}
   .Flex{
     display: flex;
-    justify-content: space-between;
+    margin: 0 auto;
+    position: relative;
+    
   button{
-    width: 40%;
+    margin: 0px;
+    background: rgb(255, 255, 255);
+    border: none;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  .Edit{
+    height: 34px;
+    width: 53px!important;
+    border-top: 1px solid rgb(217, 217, 217);
+    border-left: 1px solid rgb(217, 217, 217);
+    border-bottom: 1px solid rgb(217, 217, 217);
+    border-radius: 2px 0px 0px 2px;
+    font-weight: bold;
+  }
+
+  .Dlt{
+    height: 34px;
+    min-width: 34px!important;
+    border-radius: 0px 2px 2px 0px;
+    border: 1px solid rgb(217, 217, 217);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .D{
+    width: 104px;
+    height: 34px;
+    background: white;
+    box-shadow: 0px 3px 6px -4px rgba(0, 0, 0, 0.12), 0px 6px 16px 0px rgba(0, 0, 0, 0.08), 0px 9px 28px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 0px;
+    position: absolute;
+    right: -36%;
+    bottom: -37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
   }
   }
 }
+.Unset{
+  margin: 0;
+
+}
+.Flex{
+  display: flex;
+  justify-content: center;
+  border-radius: 0px;
+height: 32px;
+width: 130px;
+ .icon{
+  font-size: 19px;
+  margin: 7px;
+  margin-right: 0px;
+  color: white;
+ }
+ button{
+   border: none;
+   border-radius: 0px;
+ }
+}
+
 }

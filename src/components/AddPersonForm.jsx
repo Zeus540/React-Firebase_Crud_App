@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
+import Icon from '@material-ui/core/Icon';
 import firebaseDb from "../firebase";
 
+
+function display() {
+  document.getElementById("Over").style.display = 'none';
+
+}
 
 const AddPersonForm = (props) => {
   const initialFieldValues={
@@ -9,7 +15,8 @@ const AddPersonForm = (props) => {
     LastName:'',
     Sex:'',
     Nationalities:'',
-
+    Dob:'',
+    Permanentresident:'',
   }
 
   var [RelatedPersonObjects,setRelatedPersonObjects] = useState({})
@@ -51,9 +58,12 @@ const AddPersonForm = (props) => {
     props.addOrEdit(values)
   }
 
+
+
+  
   return(
     <div>
-    <form autoComplete="off" className="AddPersonForm" >
+    <form autoComplete="off" className="AddPersonForm"  >
     <h1 className="MT-25">Add a related person</h1>
         <label htmlFor="Relationship" className="MT-25">Relationship</label>
           <input name="Relationship" type="text" 
@@ -85,12 +95,38 @@ const AddPersonForm = (props) => {
           value={values.Nationalities}
           onChange={handleInputChange}/>
           
+          <p className="Resident">Permanent South African resident?</p>
+          <div
+           onChange={handleInputChange} 
+           value={values.Permanentresident} 
+          >
+          <div className='Flex'>
+        <input type="radio"  className="Unset"  name="Permanentresident" value="Yes" />
+        <label htmlFor="Permanentresident" >Yes</label>
+        </div>
+        <div className='Flex'>
+        <input type="radio" className="Unset" name="Permanentresident" value="No" />
+        <label htmlFor="Permanentresident"  >No</label>
+        </div>
+      </div>
+
+     
+
           <div className="bottomGroup">
             <div className="bottom">
-              <p>Clear</p>
-              <input type="submit" className="Green" onClick={handleFormSubmit} value={props.CurrentId==''?"Add related person" : "Update"}></input>
+            <div className='Cancel'>
+            <Icon>keyboard_arrow_left</Icon>
+              
+              <button className="Cancel" onclick={display}
+              >Cancel</button>
+              </div>
+
+              <input type="submit" className="Green W-156" onClick={handleFormSubmit} value={props.CurrentId===''?"Add related person" : "Update"}></input>
+              
             </div>
           </div>
+
+          
     </form>
     </div>
    );

@@ -2,9 +2,12 @@ import React from "react";
 import Model from "./Model.jsx";
 
 function Form() {
+ 
+
     return (
-      <div className="Form">
-        <form action="" className="Form">
+      
+        <div action="" className="Form">
+          <div className="Form">
           <label htmlFor="Name" className="MT-25">Name</label>
           <input name="Name" type="text"/>
           <label htmlFor="LastName" className="MT-25">LastName</label>
@@ -17,10 +20,12 @@ function Form() {
             <div className="Form-Group">
               <input className="checkbox" type="checkbox" name="s" id=""/>
               <label htmlFor="s">I don't have related persons</label>
+              
             </div>
           <Model/>
-        </form>
-      </div>
+          </div>
+        </div>
+     
     );
   }
   

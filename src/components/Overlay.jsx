@@ -1,14 +1,16 @@
-import React, { Component } from 'react'
+import React from "react";
 import AddPerson from "./AddPerson";
 
-export default class Overlay extends Component {
-  render() {
-    return (
-      <div>
-      <div >
-      <AddPerson/>
+
+export default function Overlay() {
+
+  
+  return (
+    
+    <div className="Overlay" id="Over"  >
+   
+    
+    <AddPerson/>
     </div>
-    </div>
-    )
-  }
+  )
 }
