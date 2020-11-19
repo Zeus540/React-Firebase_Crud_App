@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import AddPersonForm from "./AddPersonForm";
+import Icon from '@material-ui/core/Icon';
 import firebaseDb from "../firebase";
-
+import ListSidebar from "./ListSidebar";
 const AddPerson = () => {
 
   var [RelatedPersonObjects,setRelatedPersonObjects] = useState({})
@@ -61,11 +62,18 @@ const AddPerson = () => {
   return(
     
     <div className="AddPerson">
+      
+      <div className="AddPersonHolder">
+        
       <AddPersonForm {...({addOrEdit,CurrentId,RelatedPersonObjects})}/>
       
+       
+    </div>
+    
     </div>
     
    );
 }
 
 export default AddPerson;
+
