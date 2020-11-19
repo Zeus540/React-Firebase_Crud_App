@@ -1,16 +1,25 @@
 .AddPersonForm{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  text-align: left;
   margin: 0 auto;
   width: 340px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  @media (min-width:0px) and (max-width:425px){
+    
+      width: 90%;
+    
+  }
   .Cancel{
     background-color: unset!important;
     color: #00c5a3!important;
     width: unset!important;
   }
   label{
-    text-align: left;
+    text-align: left!important;
+    margin-top: 4%;
+    margin-bottom: 5%;
+
   }
   h1{
     text-align: left;
@@ -44,48 +53,7 @@
     width: 16px;
     }
  
-  .bottomGroup{
-    background: rgb(255, 255, 255);
-    border-radius: 0px;
-    box-shadow: -2px 0px 6px 0px rgba(0, 0, 0, 0.2);
-    bottom: 0px;
-    right: 0px;
-    position: absolute;
-    width:100%;
-    
-    .bottom{
-      margin-top: 10px;
-      justify-content: space-between;
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-      margin-right: 20px;
-      margin-left: 18px;
-      color: rgb(0, 197, 163);
-      .Cancel{
-        display: flex;
-    justify-content: center;
-    align-items: center;
-        p{
-          margin: 0px;
-        }
-      }
-    }
-    button{
-    
-      border-radius: 0px;
-      height: 32px;
-      width: 156px;
-    
-      border: 0px;
-      margin: 0px;
-      }
-      .W-156{
-        width: 156px;
-        margin: 0px;
-        color: white;
-      }
-    }
+  
     input[type='radio']:after {
       width: 15px;
       height: 15px;
@@ -112,3 +80,42 @@
     display: flex;
     justify-content: unset!important;}
 }
+
+.bottomGroup{
+  background: rgb(255, 255, 255);
+  border-radius: 0px;
+  box-shadow: -2px 0px 6px 0px rgba(0, 0, 0, 0.2);
+  width:100%;
+  .bottom{
+    margin-top: 10px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-left: 18px;
+    height: 52px;
+    color: rgb(0, 197, 163);
+    .Cancel{
+      display: flex;
+
+      align-items: center;
+      background: none;
+      color: #00c5a3;
+      p{
+        margin: 0px;
+      }
+    }
+  }
+  button{
+    border-radius: 0px;
+    height: 32px;
+    width: 156px;
+    border: 0px;
+    margin: 0px;
+    }
+    .W-156{
+      width: 156px;
+      margin: 0px;
+      color: white;
+    }
+  }

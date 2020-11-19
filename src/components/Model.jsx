@@ -9,7 +9,7 @@ export default function Model(props) {
 
   return (
     <div className="ModelHolder">
-    <div className="Model">
+    <div className="Model MT-25">
       <List/>
     </div>
   </div>

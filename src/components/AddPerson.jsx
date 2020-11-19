@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AddPersonForm from "./AddPersonForm";
+
 import firebaseDb from "../firebase";
 
 const AddPerson = () => {
@@ -45,27 +46,23 @@ const AddPerson = () => {
       )
   }
   
-  const onDelete = key=> {
-    if (window.confirm('Are You Sure')) {
-      firebaseDb.child(`RelatedPersons/${key}`).remove(
-        err =>{
-          if (err)
-              console.log(err)
-          else
-              setCurrentId('')
-          }
-        )
-    }
-  }
+
 
   return(
     
     <div className="AddPerson">
+      
+      <div className="AddPersonHolder">
+        
       <AddPersonForm {...({addOrEdit,CurrentId,RelatedPersonObjects})}/>
       
+       
+    </div>
+    
     </div>
     
    );
 }
 
 export default AddPerson;
+

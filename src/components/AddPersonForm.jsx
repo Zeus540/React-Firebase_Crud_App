@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import Icon from '@material-ui/core/Icon';
 import firebaseDb from "../firebase";
 
 
-function display() {
-  document.getElementById("Over").style.display = 'none';
-
-}
 
 const AddPersonForm = (props) => {
   const initialFieldValues={
@@ -56,41 +52,51 @@ const AddPersonForm = (props) => {
   const handleFormSubmit = e =>{
     e.preventDefault();
     props.addOrEdit(values)
+    document.getElementById("Over").style.display = 'none';
   }
 
 
+  const display = e => {
+    e.preventDefault();
+    document.getElementById("Over").style.display = 'none';
+   
+  }
 
   
   return(
-    <div>
+    <Fragment>
     <form autoComplete="off" className="AddPersonForm"  >
-    <h1 className="MT-25">Add a related person</h1>
-        <label htmlFor="Relationship" className="MT-25">Relationship</label>
+    <h1 className="MT-25 MB-10">Add a related person</h1>
+        <label htmlFor="Relationship" className="MT-25 MB-10">Relationship</label>
           <input name="Relationship" type="text" 
           value={values.Relationship}
           onChange={handleInputChange}/>
 
-          <label htmlFor="FirstName" className="MT-25">First name</label>
+          <label htmlFor="FirstName" className="MT-25 MB-10">First name</label>
           <input name="FirstName" type="text" 
           value={values.FirstName}
           onChange={handleInputChange}/>
 
 
-          <label htmlFor="LastName" className="MT-25">Last Name</label>
+          <label htmlFor="LastName" className="MT-25 MB-10">Last Name</label>
           <input className="Width-100" name="LastName" type="text"  
           value={values.LastName}
           onChange={handleInputChange}/>
 
 
-          <label htmlFor="Sex" className="MT-25">Sex</label>
+          <label htmlFor="Sex" className="MT-25 MB-10">Sex</label>
           <select className="Width-100" name="Sex" type="text"  
           value={values.Sex}
           onChange={handleInputChange}>
             <option>Female</option>
             <option>Male</option>
           </select>
+          
+          <label htmlFor="Dob" className="MT-25 MB-10">Date of birth</label>
+          <input type="date" name="Dob"  value={values.Dob}
+          onChange={handleInputChange} />
 
-          <label htmlFor="Nationalities" className="MT-25">Nationalities</label>
+          <label htmlFor="Nationalities" className="MT-25 MB-10">Nationalities</label>
           <input className="Width-100" name="Nationalities" type="text"  
           value={values.Nationalities}
           onChange={handleInputChange}/>
@@ -101,7 +107,7 @@ const AddPersonForm = (props) => {
            value={values.Permanentresident} 
           >
           <div className='Flex'>
-        <input type="radio"  className="Unset"  name="Permanentresident" value="Yes" />
+        <input type="radio"  className="Unset"  name="Permanentresident" value="Yes"  />
         <label htmlFor="Permanentresident" >Yes</label>
         </div>
         <div className='Flex'>
@@ -110,25 +116,24 @@ const AddPersonForm = (props) => {
         </div>
       </div>
 
-     
-
-          <div className="bottomGroup">
-            <div className="bottom">
-            <div className='Cancel'>
-            <Icon>keyboard_arrow_left</Icon>
-              
-              <button className="Cancel" onclick={display}
-              >Cancel</button>
-              </div>
-
-              <input type="submit" className="Green W-156" onClick={handleFormSubmit} value={props.CurrentId===''?"Add related person" : "Update"}></input>
-              
-            </div>
-          </div>
-
-          
     </form>
-    </div>
+
+    
+     <div className="bottomGroup">
+     <div className="bottom ">
+       
+     <div className='Cancel 'onClick={display}>
+     <Icon>keyboard_arrow_left</Icon>
+       <button
+       className="Cancel" 
+       >Cancel</button>
+       </div>
+
+       <input type="submit" className="Green W-156" onClick={handleFormSubmit} value={props.CurrentId===''?"Add related person" : "Update"}></input>
+       
+     </div>
+   </div>
+  </Fragment>
    );
 }
 

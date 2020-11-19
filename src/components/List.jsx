@@ -2,12 +2,13 @@ import React, { useState, useEffect, Fragment } from "react";
 import Overlay from './Overlay';
 import firebaseDb from "../firebase";
 import Icon from '@material-ui/core/Icon';
-import AddPersonForm from "./AddPerson";
+
 
 
 
 export default function List(props) {
 
+  
     var [RelatedPersonObjects,setRelatedPersonObjects] = useState({})
     var [CurrentId,setCurrentId] = useState('')
     
@@ -17,7 +18,7 @@ export default function List(props) {
     const [isToggles, setToggles] = useState(false);
     const toggles = () => setToggles(!isToggles);
   
-
+    
     useEffect(()=>{
       firebaseDb.child('RelatedPersons').on('value',snapshot=>{
         if (snapshot.val()!=null)
@@ -77,15 +78,13 @@ export default function List(props) {
 
 /////////////////////End///////////////////////////
 
-
+ 
   return (
    
     <Fragment>
       
     <div className="List" >
-   
       <div>
-     
    {
     
      Object.keys(RelatedPersonObjects).map(id=>{
@@ -96,7 +95,7 @@ export default function List(props) {
          
          <p className='Relatioship'> {RelatedPersonObjects[id].Relationship}</p>
         
-         <div className="Flex" >
+         <div className="Flex"  >
 
          <button 
           type="button" 
@@ -105,7 +104,6 @@ export default function List(props) {
           Edit</button>
           
           <button 
-          type="button" 
           onClick={toggles}
           className="Dlt">
           <Icon>keyboard_arrow_down</Icon>
@@ -116,10 +114,11 @@ export default function List(props) {
           className="D">
           <Icon>delete</Icon>  
           Delete</button> }
+     
          
          </div>
 
-         <br/>
+         
          
          </div>
          
@@ -138,9 +137,10 @@ export default function List(props) {
      
       {isToggled && <Overlay/>}
         <p>You haven’t added any related persons</p>
-        <div className="Flex Green  ">
+        <div className="Flex Green  "
+        onClick={toggleTrueFalse}>
         <Icon className="icon">add_circle</Icon>
-          <button type="button" onClick={toggleTrueFalse} className=" Unset Green">
+          <button type="button"  className=" Unset Green">
           Add person
           </button>
           </div>
