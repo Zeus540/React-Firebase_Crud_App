@@ -64,7 +64,7 @@ export default function List(props) {
 //////////////Delete Record///////////////////////
 
     const onDelete = key=> {
-      if (window.confirm('Are You Sure')) {
+     
         firebaseDb.child(`RelatedPersons/${key}`).remove(
           err =>{
             if (err)
@@ -73,7 +73,6 @@ export default function List(props) {
                 setCurrentId('')
             }
           )
-      }
     }
 
 /////////////////////End///////////////////////////
@@ -99,7 +98,7 @@ export default function List(props) {
 
          <button 
           type="button" 
-          onClick={()=>setCurrentId(id)} 
+          onClick={()=>setCurrentId(id),toggleTrueFalse} 
           className="Green Edit">
           Edit</button>
           
@@ -112,6 +111,7 @@ export default function List(props) {
           type="button" 
           onClick={()=>{onDelete(id)}} 
           className="D">
+            
           <Icon>delete</Icon>  
           Delete</button> }
      
