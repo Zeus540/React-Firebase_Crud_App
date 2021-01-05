@@ -88,6 +88,7 @@ const AddPersonForm = (props) => {
           <select className="Width-100" name="Sex" type="text"  
           value={values.Sex}
           onChange={handleInputChange}>
+            <option> </option>
             <option>Female</option>
             <option>Male</option>
           </select>
