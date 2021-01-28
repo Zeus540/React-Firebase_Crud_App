@@ -10,11 +10,13 @@ const Contacts = () => {
     //Once components load complete
     useEffect(() => {
         firebaseDb.child('RelatedPersons').on('value', snapshot => {
-            if (snapshot.val() != null) {
+            if (snapshot.val() != null) 
                 setRelatedPersonsObjects({
                     ...snapshot.val()
-                });
-            }
+                })
+                else
+                setRelatedPersonsObjects({})
+            
         })
     }, [])
 
@@ -73,6 +75,8 @@ const Contacts = () => {
                                         <p>{RelatedPersonsObjects[key].task}</p>
                                         <h5>Priority</h5>
                                         <p>{RelatedPersonsObjects[key].priority}</p>
+                                        <h5>Status</h5>
+                                        <p>{RelatedPersonsObjects[key].status}</p>
                                         <h5>Notes</h5>
                                         <p>{RelatedPersonsObjects[key].notes}</p>
                                        

@@ -4,6 +4,7 @@ const ContactForm = (props) => {
     const initialFieldValues = {
         task: '',
         priority: '',
+        status:'',
         notes: ''
     }
 
@@ -56,7 +57,7 @@ const ContactForm = (props) => {
                     <select className="form-control" name="priority" placeholder="Priority" name="priority" value={values.priority}
                         onChange={handleInputChange} 
                         required>
-                        <option value="">Select</option>
+                        <option value="">Urgency</option>
                         <option value="High">High</option>
                         <option value="Medium">Medium</option>
                         <option value="Low">Low</option>
@@ -66,6 +67,26 @@ const ContactForm = (props) => {
 
                 </div>
           
+                <div className="form-group input-group ">
+                    <div className="input-group-prepend">
+                        <div className="input-group-text">
+                            <i className="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <select className="form-control" name="status" placeholder="status" name="status" value={values.status}
+                        onChange={handleInputChange} 
+                        required>
+                        <option value="">Status</option>
+                        <option value="To-Do"> To Do</option>
+                        <option value="Progress">In-Progress</option>
+                        <option value="Testing">Testing</option>
+                        <option value="Complete">Complete</option>
+                    </select>
+                   
+                   
+
+                </div>
+
                 <div className="form-group input-group ">
                     <div className="input-group-prepend">
                         <div className="input-group-text">

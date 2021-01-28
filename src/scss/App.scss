@@ -27,16 +27,19 @@ h1{
 
 .jumbotron {
   padding: 2rem 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   background: #313131!important;
   border-radius: .3rem;
   color: #007bff!important;
 }
 
-input,option{
+input,option,select{
   background: transparent!important;
     border: none!important;
     color:white!important;
+    
+    height: 45px!important;
+
 }
 .input-group-text{
   background: transparent!important;
@@ -44,14 +47,14 @@ input,option{
 }
 
 .input-group{
-  border-radius: 20px;
-    box-shadow: 4px 2px 6px #525252, -4px -3px 6px #565656;
+  border-radius: 10px;
+  box-shadow: 4px 2px 6px #212121, -4px -3px 6px #212121;
 }
 
 .text{
   border: none;
-    border-radius: 20px;
-    box-shadow: 4px 2px 6px #525252, -4px -3px 6px #565656;
+    border-radius: 10px;
+    box-shadow: 4px 2px 6px #212121, -4px -3px 6px #212121;
     background: transparent;
 }
 
@@ -71,7 +74,7 @@ input:-webkit-autofill:focus {
   box-shadow: 0 0 0 50px #313131 inset;
 
   border: none!important;
-  border-radius: 20px;
+  border-radius: 10px;
 
 }
 
@@ -80,22 +83,28 @@ input:-webkit-autofill:focus {
     border: none;
         background: #313131!important;
     /* border: none; */
-    border-radius: 20px;
-    color: #dcdcdc!important;
+    border-radius: 10px;
+  
 }
 
 
 .form-control:-webkit-autofill{
   box-shadow: 0 0 0 50px #313131 inset;
   border: none!important;
-  border-radius: 20px;
-  color: white!important;
+  border-radius: 10px;
+  
 }
 
 
 .form-control:-webkit-autofill:focus{
   box-shadow: 0 0 0 50px #313131 inset;
   border: none!important;
-  border-radius: 20px;
-  color: #dcdcdc!important;
+  border-radius: 10px;
+
+}
+.btn{
+  border-radius: 10px;
+    box-shadow: 4px 2px 6px #212121, -4px -3px 6px #212121;
+    margin-top: 50px;
+    margin-right: 14px;
 }
