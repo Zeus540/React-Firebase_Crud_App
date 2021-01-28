@@ -61,15 +61,15 @@ input,option{
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 50px #313131 inset;
-  -webkit-text-fill-color:#fff;
+  box-shadow: 0 0 0 50px #313131 inset;
+  
   border: none!important;
   border-radius: 20px;
 }
 
 input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 50px #313131 inset;
-  -webkit-text-fill-color: #fff;
+  box-shadow: 0 0 0 50px #313131 inset;
+
   border: none!important;
   border-radius: 20px;
 
@@ -86,8 +86,7 @@ input:-webkit-autofill:focus {
 
 
 .form-control:-webkit-autofill{
-  -webkit-box-shadow: 0 0 0 50px #313131 inset;
-  -webkit-text-fill-color: #fff;
+  box-shadow: 0 0 0 50px #313131 inset;
   border: none!important;
   border-radius: 20px;
   color: white!important;
@@ -95,8 +94,7 @@ input:-webkit-autofill:focus {
 
 
 .form-control:-webkit-autofill:focus{
-  -webkit-box-shadow: 0 0 0 50px #313131 inset;
-  -webkit-text-fill-color: #fff;
+  box-shadow: 0 0 0 50px #313131 inset;
   border: none!important;
   border-radius: 20px;
   color: #dcdcdc!important;
