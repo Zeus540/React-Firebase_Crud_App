@@ -1,19 +1,17 @@
 import './scss/App.scss';
-import LeftNav from "./components/LeftNav.jsx";
-import RightSection from "./components/RightSection.jsx";
-import TopMenu from "./components/TopMenu.jsx";
+import React from "react";
 import 'antd/dist/antd.css';
+import Contacts from './components/Contacts.jsx'
 
 function App() {
   return (
-    <div className="App">
-      <TopMenu/>
-      <div className="Container">
-        <LeftNav/>
-        <RightSection/>
+    <div className="row">
+      <div className="col-md-8 offset-md-2">
+        <Contacts/>
       </div>
     </div>
   );
 }
+
 
 export default App;

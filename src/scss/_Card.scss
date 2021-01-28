@@ -1,0 +1,52 @@
+.Card{
+  min-width:230px;
+  margin:10px;
+  border-radius: 20px;
+  padding: 30px;
+  color: black;
+  font-family: arial;
+  overflow-wrap: break-word;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow:  20px 20px 60px #d9d9d9,
+               -20px -20px 60px #ffffff;
+               @media  (min-width: 1px) and (max-width: 425px) {
+                width: 90%;
+    margin: 0 auto;
+    margin-bottom: 36px;
+                }
+              @media  (min-width: 426px) and (max-width: 768px) {
+                width:46%;
+              }
+              @media  (min-width: 769px) and (max-width: 2560px) {
+                min-width:230px;
+              }
+            
+}
+
+.Flex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Form{
+  @media  (min-width: 1px) and (max-width: 425px) {
+    width: 90%;
+margin: 0 auto;
+margin-bottom: 36px;
+    }
+  @media  (min-width: 426px) and (max-width: 768px) {
+    width:96%;
+  }
+  @media  (min-width: 769px) and (max-width: 1024px) {
+    width:72%;
+  }
+  @media  (min-width: 1025px) and (max-width: 1440px) {
+    width:76%;
+  }
+  @media  (min-width: 1441px) and (max-width: 2560px) {
+    width:50%;
+  }
+}
