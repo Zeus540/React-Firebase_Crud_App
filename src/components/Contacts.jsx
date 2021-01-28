@@ -57,7 +57,7 @@ const Contacts = () => {
         <>
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <h1 className="display-4 text-center">Contact Manager</h1>
+                    <h1 className="display-4 text-center">TO DO LIST</h1>
                 </div>
             </div>
             <div className="Flex ">
@@ -69,14 +69,12 @@ const Contacts = () => {
                                 Object.keys(RelatedPersonsObjects).map((key) => (
                                  
                                     <div className="Card" key={key}>
-                                      <h5>NAME</h5>
-                                        <p>{RelatedPersonsObjects[key].fullName}</p>
-                                        <h5>MOBILE</h5>
-                                        <p>{RelatedPersonsObjects[key].mobile}</p>
-                                        <h5>EMAIL</h5>
-                                        <p>{RelatedPersonsObjects[key].email}</p>
-                                        <h5>ADDRESS</h5>
-                                        <p>{RelatedPersonsObjects[key].address}</p>
+                                      <h5>Task</h5>
+                                        <p>{RelatedPersonsObjects[key].task}</p>
+                                        <h5>Priority</h5>
+                                        <p>{RelatedPersonsObjects[key].priority}</p>
+                                        <h5>Notes</h5>
+                                        <p>{RelatedPersonsObjects[key].notes}</p>
                                        
                                             <button className="btn text-primary" onClick={() => { setCurrentId(key) }}>
                                                 <i className="fas fa-pencil-alt"></i>
