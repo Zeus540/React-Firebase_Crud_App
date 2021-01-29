@@ -5,7 +5,8 @@ const ContactForm = (props) => {
         task: '',
         priority: '',
         status:'',
-        notes: ''
+        notes: '',
+        domain: ''
     }
 
     var [values, setValues] = useState(initialFieldValues)
@@ -47,6 +48,28 @@ const ContactForm = (props) => {
                     required
                 />
             </div>
+
+            <div className="form-group input-group ">
+                    <div className="input-group-prepend">
+                        <div className="input-group-text">
+                            <i className="fa fa-server"></i>
+                        </div>
+                    </div>
+                    <select className="form-control" name="domain" placeholder="domain"  value={values.domain}
+                        onChange={handleInputChange} 
+                        required>
+                        <option value="">Server</option>
+                        <option value="Zaheerroberts.co.za">Zaheerroberts.co.za</option>
+                        <option value="Nike.zaheerroberts.co.za">Nike.zaheerroberts.co.za</option>
+                        <option value="Todo.zaheerroberts.co.za">Todo.zaheerroberts.co.za</option>
+                        <option value="Rottweiler.zaheerroberts.co.za">Rottweiler.zaheerroberts.co.za</option>
+                        <option value="Kkwe.co.za">Kkwe.co.za</option>
+                        
+                    </select>
+                   
+                   
+
+                </div>
            
                 <div className="form-group input-group ">
                     <div className="input-group-prepend">
@@ -54,7 +77,7 @@ const ContactForm = (props) => {
                             <i className="fas fa-bell"></i>
                         </div>
                     </div>
-                    <select className="form-control" name="priority" placeholder="Priority" name="priority" value={values.priority}
+                    <select className="form-control" name="priority" placeholder="Priority"  value={values.priority}
                         onChange={handleInputChange} 
                         required>
                         <option value="">Priority</option>
@@ -73,12 +96,12 @@ const ContactForm = (props) => {
                             <i className="fas fa-spinner"></i>
                         </div>
                     </div>
-                    <select className="form-control" name="status" placeholder="status" name="status" value={values.status}
+                    <select className="form-control" name="status" placeholder="status"  value={values.status}
                         onChange={handleInputChange} 
                         required>
                         <option value="">Status</option>
                         <option value="To-Do"> To Do</option>
-                        <option value="Progress">In-Progress</option>
+                        <option value="In-Progress">In-Progress</option>
                         <option value="Testing">Testing</option>
                         <option value="Complete">Complete</option>
                     </select>
@@ -96,7 +119,7 @@ const ContactForm = (props) => {
                     <input className="form-control" name="notes" placeholder="Notes"
                         value={values.notes}
                         onChange={handleInputChange}
-                        required
+
                         type="text"
                     />
                 </div>

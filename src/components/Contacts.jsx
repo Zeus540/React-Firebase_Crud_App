@@ -59,7 +59,7 @@ const Contacts = () => {
         <>
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <h1 className="display-4 text-center">TASKS</h1>
+                    <h1 className="display-4 text-center">TASK MANAGER</h1>
                 </div>
             </div>
             <div className="Flex ">
@@ -73,6 +73,8 @@ const Contacts = () => {
                                     <div className="Card" key={key}>
                                       <h5>Task</h5>
                                         <p>{RelatedPersonsObjects[key].task}</p>
+                                        <h5>Server</h5>
+                                        <p >{RelatedPersonsObjects[key].domain}</p>
                                         <h5>Priority</h5>
                                         <p >{RelatedPersonsObjects[key].priority}</p>
                                         <h5>Status</h5>

@@ -3,11 +3,11 @@
   max-width:230px;
   margin:10px;
   border-radius: 20px;
-  padding: 30px;
+  padding: 20px;
   color: white;
   font-family: arial;
   overflow-wrap: break-word;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 4px 2px 6px #212121, -4px -3px 6px #212121;
                @media  (min-width: 1px) and (max-width: 425px) {
                 min-width: 90%;
@@ -15,10 +15,10 @@
     margin-bottom: 36px;
                 }
               @media  (min-width: 426px) and (max-width: 768px) {
-                width:46%;
+                min-width:46%;
               }
               @media  (min-width: 769px) and (max-width: 2560px) {
-                min-width:230px;
+                min-width:290px;
               }
             
 }
@@ -31,10 +31,11 @@
 }
 
 .Form{
+  margin-bottom: 36px;
   @media  (min-width: 1px) and (max-width: 425px) {
     width: 90%;
 margin: 0 auto;
-margin-bottom: 36px;
+
     }
   @media  (min-width: 426px) and (max-width: 768px) {
     width:96%;

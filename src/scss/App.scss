@@ -18,7 +18,7 @@ html,body{
 h5{
  
   color: #007bff!important;
-  font-family: 'Kaushan Script', arial;
+  font-family: 'Open Sans Condensed', arial;
 }
   
 h1{
@@ -49,13 +49,13 @@ input,option,select{
 }
 
 .input-group{
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 4px 2px 6px #212121, -4px -3px 6px #212121;
 }
 
 .text{
   border: none;
-    border-radius: 10px;
+  border-radius: 5px;
     box-shadow: 4px 2px 6px #212121, -4px -3px 6px #212121;
     background: transparent;
 }
@@ -69,14 +69,14 @@ input:-webkit-autofill {
   box-shadow: 0 0 0 50px #313131 inset;
   
   border: none!important;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 input:-webkit-autofill:focus {
   box-shadow: 0 0 0 50px #313131 inset;
 
   border: none!important;
-  border-radius: 10px;
+  border-radius: 5px;
 
 }
 
@@ -85,7 +85,7 @@ input:-webkit-autofill:focus {
     border: none;
         background: #313131!important;
     /* border: none; */
-    border-radius: 10px;
+    border-radius: 5px;
     color: grey!important;
 }
 
@@ -93,7 +93,7 @@ input:-webkit-autofill:focus {
 .form-control:-webkit-autofill{
   box-shadow: 0 0 0 50px #313131 inset;
   border: none!important;
-  border-radius: 10px;
+  border-radius: 5px;
   
 }
 
@@ -101,11 +101,11 @@ input:-webkit-autofill:focus {
 .form-control:-webkit-autofill:focus{
   box-shadow: 0 0 0 50px #313131 inset;
   border: none!important;
-  border-radius: 10px;
+  border-radius: 5px;
 
 }
 .btn{
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 4px 2px 6px #073b73, -4px -3px 6px #073b73;
     margin-top: 50px;
     margin-right: 14px;
@@ -114,17 +114,20 @@ input:-webkit-autofill:focus {
 }
 
 .clear{
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 4px 2px 6px #073b73, -4px -3px 6px #073b73;
     margin-top: 10px;
     margin-right: 14px;
     background: #007bff!important;
     color: white;
+    padding: 7px 27px;
 }
 
 
 
 p{
- 
-font-family: 'Open Sans Condensed', arial;
+  padding-top: 5px;
+  font-family: "Open Sans Condensed", arial;
+  border-top: 1px #007bff solid;
+
 }
