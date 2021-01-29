@@ -59,7 +59,7 @@ const Contacts = () => {
         <>
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <h1 className="display-4 text-center">TO DO LIST</h1>
+                    <h1 className="display-4 text-center">TASKS</h1>
                 </div>
             </div>
             <div className="Flex ">
@@ -74,16 +74,16 @@ const Contacts = () => {
                                       <h5>Task</h5>
                                         <p>{RelatedPersonsObjects[key].task}</p>
                                         <h5>Priority</h5>
-                                        <p>{RelatedPersonsObjects[key].priority}</p>
+                                        <p >{RelatedPersonsObjects[key].priority}</p>
                                         <h5>Status</h5>
-                                        <p>{RelatedPersonsObjects[key].status}</p>
+                                        <p >{RelatedPersonsObjects[key].status}</p>
                                         <h5>Notes</h5>
                                         <p>{RelatedPersonsObjects[key].notes}</p>
                                        
-                                            <button className="btn text-primary" onClick={() => { setCurrentId(key) }}>
+                                            <button className="btn clear " onClick={() => { setCurrentId(key) }}>
                                                 <i className="fas fa-pencil-alt"></i>
                                             </button>
-                                            <button className="btn text-danger" onClick={() => { onDelete(key) }}>
+                                            <button className="btn clear " onClick={() => { onDelete(key) }}>
                                                 <i className="far fa-trash-alt"></i>
                                             </button>
                                         

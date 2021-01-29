@@ -38,7 +38,7 @@ const ContactForm = (props) => {
             <div className="form-group input-group">
                 <div className="input-group-prepend">
                     <div className="input-group-text">
-                        <i className="fas fa-user"></i>
+                        <i className="fas fa-tasks"></i>
                     </div>
                 </div>
                 <input className="form-control" name="task" placeholder="Task"
@@ -51,13 +51,13 @@ const ContactForm = (props) => {
                 <div className="form-group input-group ">
                     <div className="input-group-prepend">
                         <div className="input-group-text">
-                            <i className="fas fa-mobile-alt"></i>
+                            <i className="fas fa-bell"></i>
                         </div>
                     </div>
                     <select className="form-control" name="priority" placeholder="Priority" name="priority" value={values.priority}
                         onChange={handleInputChange} 
                         required>
-                        <option value="">Urgency</option>
+                        <option value="">Priority</option>
                         <option value="High">High</option>
                         <option value="Medium">Medium</option>
                         <option value="Low">Low</option>
@@ -70,7 +70,7 @@ const ContactForm = (props) => {
                 <div className="form-group input-group ">
                     <div className="input-group-prepend">
                         <div className="input-group-text">
-                            <i className="fas fa-mobile-alt"></i>
+                            <i className="fas fa-spinner"></i>
                         </div>
                     </div>
                     <select className="form-control" name="status" placeholder="status" name="status" value={values.status}
@@ -102,7 +102,8 @@ const ContactForm = (props) => {
                 </div>
 
             <div className="form-group">
-                <input type="submit" value={props.currentId === "" ? "Save" : "Update"} className="btn btn-primary btn-block" />
+                
+                <input type="submit" value={props.currentId === "" ? " Save" : "Update"} className="btn btn-primary btn-block" />
             </div>
         </form>
     );
