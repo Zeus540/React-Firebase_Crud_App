@@ -1,52 +1,57 @@
 .Card{
-  min-width:230px;
-  max-width:230px;
-  margin:10px;
-  border-radius: 20px;
-  padding: 20px;
-  color: white;
+  width:100%;
+ 
+  color: #111111;
   font-family: arial;
   overflow-wrap: break-word;
   border-radius: 5px;
-  box-shadow: 4px 2px 6px #212121, -4px -3px 6px #212121;
+
                @media  (min-width: 1px) and (max-width: 425px) {
-                min-width: 90%;
-    margin: 0 auto;
-    margin-bottom: 36px;
+             
+                margin: 0 auto;
+                
                 }
               @media  (min-width: 426px) and (max-width: 768px) {
-                min-width:46%;
+               
               }
               @media  (min-width: 769px) and (max-width: 2560px) {
-                min-width:290px;
+            
               }
             
 }
-
-.Flex{
+.CardDetails{
+ 
+}
+.CardIntroHolder{
   display: flex;
-  flex-direction: row;
+}
+.CardTitleHolder{
+ width: 100%;
+
+}    
+.FlexCard{
   flex-wrap: wrap;
-  justify-content: center;
+  overflow-y: scroll;
+  min-width: 100%;
+  max-width: 100%;
+  margin-top: 2%!important;
+  background: #e0dede;
+  padding: 2%;
+  
+  @media  (min-width: 1px) and (max-width: 425px) {
+    overflow-y: hidden;
+overflow-x: scroll;
+margin-top: 10%!important;
+    }
 }
 
-.Form{
-  margin-bottom: 36px;
-  @media  (min-width: 1px) and (max-width: 425px) {
-    width: 90%;
-margin: 0 auto;
-
-    }
-  @media  (min-width: 426px) and (max-width: 768px) {
-    width:96%;
-  }
-  @media  (min-width: 769px) and (max-width: 1024px) {
-    width:72%;
-  }
-  @media  (min-width: 1025px) and (max-width: 1440px) {
-    width:76%;
-  }
-  @media  (min-width: 1441px) and (max-width: 2560px) {
-    width:57.5%;
-  }
+.FlexCard::-webkit-scrollbar {
+  width: .90rem;
+}
+::-webkit-scrollbar-track {
+  background-color: #edf2f7;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #0067d6;
+  
 }

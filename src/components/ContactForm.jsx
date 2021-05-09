@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react';
+var task = document.getElementById('task')
+var domain = document.getElementById('domain')
+var priority = document.getElementById('priority')
+var status = document.getElementById('status')
+var notes = document.getElementById('notes')
 
 const ContactForm = (props) => {
     const initialFieldValues = {
@@ -26,15 +31,22 @@ const ContactForm = (props) => {
         setValues({
             ...values,
             [name]: value
+            
         })
+    
     }
 
     const handleFormSubmit = e => {
         e.preventDefault()
+
+       
         props.addOrEdit(values);
+       
+    
     }
 
     return (
+       
         <form className="Form" autoComplete="off" onSubmit={handleFormSubmit}>
             <div className="form-group input-group">
                 <div className="input-group-prepend">
@@ -42,10 +54,10 @@ const ContactForm = (props) => {
                         <i className="fas fa-tasks"></i>
                     </div>
                 </div>
-                <input className="form-control" name="task" placeholder="Task"
+                <input className="form-control" name="task" placeholder="Task" id="task"
                     value={values.task}
                     onChange={handleInputChange}
-                    required
+                    
                 />
             </div>
 
@@ -55,10 +67,10 @@ const ContactForm = (props) => {
                             <i className="fa fa-server"></i>
                         </div>
                     </div>
-                    <select className="form-control" name="domain" placeholder="domain"  value={values.domain}
+                    <select className="form-control" name="domain" placeholder="domain" id = "domain"  value={values.domain}
                         onChange={handleInputChange} 
-                        required>
-                        <option value="">Server</option>
+                        >
+                        <option value=""></option>
                         <option value="Zaheerroberts.co.za">Zaheerroberts.co.za</option>
                         <option value="Nike.zaheerroberts.co.za">Nike.zaheerroberts.co.za</option>
                         <option value="Todo.zaheerroberts.co.za">Todo.zaheerroberts.co.za</option>
@@ -77,10 +89,10 @@ const ContactForm = (props) => {
                             <i className="fas fa-bell"></i>
                         </div>
                     </div>
-                    <select className="form-control" name="priority" placeholder="Priority"  value={values.priority}
+                    <select className="form-control" name="priority" placeholder="Priority" id = "priority"  value={values.priority}
                         onChange={handleInputChange} 
-                        required>
-                        <option value="">Priority</option>
+                        >
+                        <option value=""></option>
                         <option value="High">High</option>
                         <option value="Medium">Medium</option>
                         <option value="Low">Low</option>
@@ -96,10 +108,10 @@ const ContactForm = (props) => {
                             <i className="fas fa-spinner"></i>
                         </div>
                     </div>
-                    <select className="form-control" name="status" placeholder="status"  value={values.status}
+                    <select className="form-control" name="status" placeholder="status" id = "status"  value={values.status}
                         onChange={handleInputChange} 
-                        required>
-                        <option value="">Status</option>
+                        >
+                        <option value=""></option>
                         <option value="To-Do"> To Do</option>
                         <option value="In-Progress">In-Progress</option>
                         <option value="Testing">Testing</option>
@@ -116,7 +128,7 @@ const ContactForm = (props) => {
                             <i className="fas fa-comment"></i>
                         </div>
                     </div>
-                    <input className="form-control" name="notes" placeholder="Notes"
+                    <textarea className="form-control notes" name="notes" id = "notes" placeholder="Notes"
                         value={values.notes}
                         onChange={handleInputChange}
 
@@ -126,9 +138,10 @@ const ContactForm = (props) => {
 
             <div className="form-group">
                 
-                <input type="submit" value={props.currentId === "" ? " Save" : "Update"} className="btn btn-primary btn-block" />
+                <input type="submit" value={props.currentId === "" ? "Add Task" : "Update"} className="btn btn-primary "   />
             </div>
         </form>
+      
     );
 }
 

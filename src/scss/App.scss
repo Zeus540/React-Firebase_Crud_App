@@ -12,12 +12,25 @@ html,body{
   position: relative;
   font-size: 14px;
   line-height: 1.5715;
-  background: #313131!important;
+  background: #f3f3f3!important;
+  
 }
+table{
+  width: 100%;
+
+}
+tr,td{
+  min-width: 100%;
+}  
+
+td{
+  padding: 20px;
+  white-space: nowrap;
+}  
 
 h5{
  
-  color: #007bff!important;
+  color: #0067d6!important;
   font-family: 'Open Sans Condensed', arial;
 }
   
@@ -27,13 +40,6 @@ h1{
   font-family: 'Open Sans Condensed', arial;
 }
 
-.jumbotron {
-  padding: 2rem 1rem;
-  margin-bottom: 0rem;
-  background: #313131!important;
-  border-radius: .3rem;
-  color: #007bff!important;
-}
 
 input,option,select{
   background: transparent!important;
@@ -49,78 +55,87 @@ input,option,select{
 }
 
 .input-group{
-  border-radius: 5px;
-  box-shadow: 4px 2px 6px #212121, -4px -3px 6px #212121;
+
+  background: #f8f8f8;
 }
 
 .text{
   border: none;
-  border-radius: 5px;
-    box-shadow: 4px 2px 6px #212121, -4px -3px 6px #212121;
+
+ 
     background: transparent;
 }
 
 .fa, .fas {
   font-weight: 900;
-  color: white;
+  color: #0067d6;
 }
 
 input:-webkit-autofill {
-  box-shadow: 0 0 0 50px #313131 inset;
+
   
   border: none!important;
-  border-radius: 5px;
+
 }
 
 input:-webkit-autofill:focus {
-  box-shadow: 0 0 0 50px #313131 inset;
+
 
   border: none!important;
-  border-radius: 5px;
+ 
 
 }
 
 .form-control{
-  background: transparent;
+
     border: none;
-        background: #313131!important;
+    
     /* border: none; */
-    border-radius: 5px;
+    
     color: grey!important;
 }
 
 
 .form-control:-webkit-autofill{
-  box-shadow: 0 0 0 50px #313131 inset;
+
   border: none!important;
-  border-radius: 5px;
+ 
   
 }
 
 
 .form-control:-webkit-autofill:focus{
-  box-shadow: 0 0 0 50px #313131 inset;
+
   border: none!important;
-  border-radius: 5px;
+
 
 }
 .btn{
-  border-radius: 5px;
-  box-shadow: 4px 2px 6px #073b73, -4px -3px 6px #073b73;
-    margin-top: 50px;
+ 
+  border-radius: 0px;
+    margin-top: 10px;
     margin-right: 14px;
-    background: #007bff!important;
+    background: #313131!important;
     color: white;
 }
 
 .clear{
-  border-radius: 5px;
-  box-shadow: 4px 2px 6px #073b73, -4px -3px 6px #073b73;
+
     margin-top: 10px;
     margin-right: 14px;
-    background: #007bff!important;
+    background:#b4b4b4!important;
     color: white;
     padding: 7px 27px;
+    transition: all 0.1s ease-in-out;
+    &:hover{
+      background: #0067d6!important;
+      .fa, .fas {
+        color: white!important;
+      }
+      .far {
+        color: rgb(224, 10, 10)!important;
+      }
+    }
 }
 
 
@@ -128,6 +143,159 @@ input:-webkit-autofill:focus {
 p{
   padding-top: 5px;
   font-family: "Open Sans Condensed", arial;
-  border-top: 1px #007bff solid;
+ 
 
+}
+
+.Flex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ 
+}
+.MainFlex{
+  display: flex;
+ 
+}
+
+.w-30{
+  max-width: 20%;
+  padding-left: 2%;
+  min-height: 100vh;
+  padding-right: 2%;
+  background: #0067d6;
+ top: 0;
+ @media  (min-width: 1px) and (max-width: 425px) {
+  min-width: 100%;
+  }
+}
+
+.sideBarHolder{
+  width: 100vw;
+  position: absolute;
+  background: #202020de;
+}
+
+.hidden{
+  opacity: 0;
+  display: none!important;
+ 
+}
+.rotateicon{
+  transition: all 0.4s ease-in-out;
+  transform: rotateZ(180deg);
+}
+#iconBtn{
+  transition: all 0.5s ease-in-out;
+  background: #0067d6;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+}
+#icon{
+  font-size: 30px;
+  padding: 4px 18px;
+  margin: 0;
+  color: #f8f8f8;
+  border: none;
+  transition: all 0.4s ease-in-out!important;
+}
+.iconb{
+  color: #0067d6!important;
+
+}
+.iconbtn{
+ 
+  background: white!important;
+}
+.Form{
+  margin-bottom: 36px;
+  @media  (min-width: 1px) and (max-width: 425px) {
+    margin: 0 auto;
+    }
+  @media  (min-width: 426px) and (max-width: 768px) {
+  }
+  @media  (min-width: 769px) and (max-width: 1024px) {
+  }
+  @media  (min-width: 1025px) and (max-width: 1440px) {
+    
+  }
+  @media  (min-width: 1441px) and (max-width: 2560px) {
+    
+  }
+}
+
+.formHolder{
+  background: red;
+
+}
+
+.popup{
+  display: none;
+  position: absolute;
+  width: 100vw;
+  background: #202020de;
+  height: 100vh;
+  z-index: 2;
+}
+.popUpHolder{
+  background: white;
+  width: 30%;
+  padding: 20px;
+  @media  (min-width: 1px) and (max-width: 425px) {
+    width: 70%;
+    }
+}
+.popUpActive{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 5s ease-in-out;
+}
+.popUpBtn{
+  background:#b4b4b4;
+  border: 0;
+  padding: 10px 40px;
+  margin: 10px;
+  margin-left: 0;
+  transition: all 0.1s ease-in-out;
+  &:hover{
+    background: #0067d6;
+  }
+}
+.taskHolder{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 5%;
+  @media  (min-width: 1px) and (max-width: 425px) {
+    padding: 20% 10%;
+    }
+}
+
+.taskHolderHeading{
+  color: #0067d6!important;
+
+}
+
+#emptymessage{
+  
+}
+.heading{
+  
+  padding: 40px;
+}
+
+
+.notes{
+  min-height: 200px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.notess{
+ 
+ white-space: unset;
 }

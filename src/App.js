@@ -5,8 +5,8 @@ import Contacts from './components/Contacts.jsx'
 
 function App() {
   return (
-    <div className="row">
-      <div className="col-md-8 offset-md-2">
+    <div >
+      <div >
         <Contacts/>
       </div>
     </div>
