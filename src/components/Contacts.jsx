@@ -94,7 +94,7 @@ const Contacts = () => {
                   else
                 
                       setCurrentId('')
-                      Increment()
+                      Close()
               })
       else
           firebaseDb.child(`RelatedPersons/${currentId}`).set(
@@ -104,7 +104,7 @@ const Contacts = () => {
                       console.log(err)
                   else
                       setCurrentId('')
-                      
+                      Close()
               })
   }
 
@@ -139,6 +139,15 @@ const Open = () => {
     iconbtn.classList.add("iconbtn")
     icon.classList.add("iconb")
      sideBar.classList.remove("hidden")
+     isOpen = true
+     icon.classList.add("rotateicon")
+  
+    
+  }
+  const Close = () => {
+    iconbtn.classList.add("iconbtn")
+    icon.classList.add("iconb")
+     sideBar.classList.add("hidden")
      isOpen = true
      icon.classList.add("rotateicon")
   
@@ -188,7 +197,7 @@ const onDelete = id => {
                     <h1 className="display-4 text-center heading" >OGM MEDIA</h1>
                     <p className=" text-center">Log your task below</p>
 
-                    <ContactForm {...({ currentId, RelatedPersonsObjects, addOrEdit ,Increment,})} ></ContactForm>
+                    <ContactForm {...({ currentId, RelatedPersonsObjects, addOrEdit ,Close})} ></ContactForm>
 
                 </div>
              

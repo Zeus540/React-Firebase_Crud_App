@@ -56,6 +56,7 @@ const ContactForm = (props) => {
                 </div>
                 <input className="form-control" name="task" placeholder="Task" id="task"
                     value={values.task}
+                    required
                     onChange={handleInputChange}
                     
                 />
@@ -69,6 +70,7 @@ const ContactForm = (props) => {
                     </div>
                     <select className="form-control" name="domain" placeholder="domain" id = "domain"  value={values.domain}
                         onChange={handleInputChange} 
+                        required
                         >
                         <option value=""></option>
                         <option value="Zaheerroberts.co.za">Zaheerroberts.co.za</option>
@@ -91,6 +93,7 @@ const ContactForm = (props) => {
                     </div>
                     <select className="form-control" name="priority" placeholder="Priority" id = "priority"  value={values.priority}
                         onChange={handleInputChange} 
+                        required
                         >
                         <option value=""></option>
                         <option value="High">High</option>
@@ -110,6 +113,7 @@ const ContactForm = (props) => {
                     </div>
                     <select className="form-control" name="status" placeholder="status" id = "status"  value={values.status}
                         onChange={handleInputChange} 
+                        required
                         >
                         <option value=""></option>
                         <option value="To-Do"> To Do</option>
