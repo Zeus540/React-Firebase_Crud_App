@@ -25,8 +25,12 @@ tr,td{
 
 td{
   padding: 20px;
-  white-space: nowrap;
-}  
+  max-width: 180px!important;
+  @media  (min-width: 1px) and (max-width: 425px) {
+    min-width: 150px;
+    max-width: 150px;
+    }
+}      
 
 h5{
  
@@ -69,10 +73,6 @@ input,option,select{
     background: transparent;
 }
 
-.fa, .fas {
-  font-weight: 900;
-  color: #0067d6;
-}
 
 input:-webkit-autofill {
 
@@ -126,22 +126,38 @@ input:-webkit-autofill:focus {
 margin-bottom: 0;
     margin-top: 10px;
     margin-right: 14px;
-    background:#b4b4b4!important;
+
     color: white;
-    padding: 7px 27px;
+  background: transparent!important;
     transition: all 0.1s ease-in-out;
     &:hover{
-      background: #0067d6!important;
+  
       .fa, .fas {
-        color: white!important;
+        color: #0257b1!important;
       }
       .far {
-        color: rgb(224, 10, 10)!important;
+        color: rgb(185, 14, 14)!important;
       }
     }
 }
+.p300{
+  word-break: break-word;
+  max-width: 150px;
+  @media  (min-width: 1px) and (max-width: 425px) {
+    min-width: 300px;
+    white-space: unset;
+    word-break: break-word;
+    }
+}
 
+.fa, .fas {
+  font-weight: 900;
+  color: #0067d6;
+}
 
+.far {
+  color: rgb(224, 10, 10)!important;
+}
 
 p{
   padding-top: 5px;
@@ -176,11 +192,7 @@ p{
   }
 }
 
-.sideBarHolder{
-  width: 100vw;
-  position: absolute;
-  background: #202020de;
-}
+
 
 .hidden{
   opacity: 0;
@@ -240,7 +252,7 @@ p{
 
 .popup{
   display: none;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   background: #202020de;
   height: 100vh;
@@ -277,23 +289,30 @@ p{
   width: 100%;
   padding: 5%;
   @media  (min-width: 1px) and (max-width: 425px) {
-    padding: 20% 10%;
+    padding: 20% 0%;
     height: 100vh;
     }
 }
 
 .taskHolderHeading{
   color: #0067d6!important;
- 
+
+  @media  (min-width: 1px) and (max-width: 425px) {
+    padding: 0% 10%;
+    }
 }
 
 #emptymessage{
-  
+  @media  (min-width: 1px) and (max-width: 425px) {
+    padding: 0% 10%;
+    }
 }
 .heading{
-  
-  padding: 40px;
+  padding-left: 0px;
+  padding-right: 0px;
   padding-top: 80px;
+  padding-bottom: 10px;
+  margin-bottom: 0;
   @media  (min-width: 1px) and (max-width: 425px) {
     padding: 60px;
     padding-top: 60px;

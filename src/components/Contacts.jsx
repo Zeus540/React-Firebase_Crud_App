@@ -38,11 +38,11 @@ const Contacts = () => {
                     
                 })
                
-             
+               
             }
                 else{
                 setRelatedPersonsObjects({})
-              
+               
                 
                 }
         })
@@ -53,12 +53,12 @@ const Contacts = () => {
                     ...snapshot.val()
                     
                 })
-               
+              
              
             }
                 else{
                 setCounterObjects({})
-              
+                
                 
                 }
         })
@@ -94,6 +94,7 @@ const Contacts = () => {
                   else
                 
                       setCurrentId('')
+                      Increment()
                       Close()
               })
       else
@@ -145,11 +146,12 @@ const Open = () => {
     
   }
   const Close = () => {
-    iconbtn.classList.add("iconbtn")
-    icon.classList.add("iconb")
+      
+    iconbtn.classList.remove("iconbtn")
+    icon.classList.remove("iconb")
      sideBar.classList.add("hidden")
      isOpen = true
-     icon.classList.add("rotateicon")
+     icon.classList.remove("rotateicon")
   
     
   }
@@ -191,7 +193,7 @@ const onDelete = id => {
                 <button id="no" onClick={() => { No() }} className="popUpBtn">NO</button>
             </div>
             </div>
-           <div className="sideBarHolder">
+         
                 <div className="w-30 hidden" id="sidebar">
            
                     <h1 className="display-4 text-center heading" >OGM MEDIA</h1>
@@ -206,7 +208,7 @@ const onDelete = id => {
                          <p id="icon">{isOpenIcon}</p>
                          </div>
                     </div>
-                    </div>
+                   
 
                     <div className="taskHolder">
                     <h1 className="display-4 taskHolderHeading">ACTIVE TASKS</h1>
@@ -223,7 +225,7 @@ const onDelete = id => {
                                    <table>
                                        <tbody>
                                            
-                                           <tr>
+                                           <tr valign="top">
                                             <td>
                                              <thead>Task</thead>
                                                <p >{RelatedPersonsObjects[key].task}</p>
@@ -241,7 +243,7 @@ const onDelete = id => {
                                                <thead>Status</thead>
                                                <p >{RelatedPersonsObjects[key].status}</p>
                                                </td>
-                                               <td className="notess">
+                                               <td className="notess p300">
                                                <thead>Notes</thead>
                                                <p >{RelatedPersonsObjects[key].notes}</p>
                                                </td>
