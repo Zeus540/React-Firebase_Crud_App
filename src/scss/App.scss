@@ -163,14 +163,16 @@ p{
 
 .w-30{
   max-width: 20%;
-  padding-left: 5%;
+  padding-left: 2%;
   min-height: 100vh;
-  padding-right: 5%;
+  padding-right: 2%;
   background: #0067d6;
  top: 0;
  @media  (min-width: 1px) and (max-width: 425px) {
   min-width: 100%;
   padding-bottom: 20%;
+  padding-right: 5%;
+  padding-left: 5%;
   }
 }
 
@@ -291,6 +293,7 @@ p{
 .heading{
   
   padding: 40px;
+  padding-top: 80px;
   @media  (min-width: 1px) and (max-width: 425px) {
     padding: 60px;
     padding-top: 60px;
