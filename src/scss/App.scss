@@ -15,17 +15,22 @@ html,body{
   background: #f3f3f3!important;
   
 }
+.btn-primary{
+  margin: 0!important;
+  padding: 0px 40px;
+}
 table{
   width: 100%;
 
 }
-tr,td{
+tr{
   min-width: 100%;
 }  
 
 td{
-  padding: 20px;
-  max-width: 180px!important;
+  
+  max-width: 0px;
+  padding: 5px 15px;
   @media  (min-width: 1px) and (max-width: 425px) {
     min-width: 150px;
     max-width: 150px;
@@ -44,12 +49,22 @@ h1{
   font-family: 'Open Sans Condensed', arial;
 }
 
+.text{
 
-input,option,select{
+    padding: 0px 5px!important;
+}
+input,select{
   background: transparent!important;
     border: none!important;
     color:white!important;
-    
+    margin-right:10px!important;
+    height: 45px!important;
+   
+}
+option{
+  background:#0067d6!important;
+    border: none!important;
+    color:white!important;
     height: 45px!important;
 
 }
@@ -90,6 +105,7 @@ input:-webkit-autofill:focus {
 }
 
 .form-control{
+padding: 0px ;
 
     border: none;
     
@@ -116,16 +132,16 @@ input:-webkit-autofill:focus {
 .btn{
  
   border-radius: 0px;
-    margin-top: 10px;
-    margin-right: 14px;
+    
+    margin-left: 14px;
     background: #313131!important;
     color: white;
 }
 
 .clear{
 margin-bottom: 0;
-    margin-top: 10px;
-    margin-right: 14px;
+   
+    
 
     color: white;
   background: transparent!important;
@@ -158,11 +174,22 @@ margin-bottom: 0;
 .far {
   color: rgb(224, 10, 10)!important;
 }
-
+.t-head{
+  background: #0067d6;
+  color: white;
+ 
+}
+.white{
+  color: white;
+  padding-right: 10px;
+}
+.t-d{
+  padding: 15px;
+}
 p{
   padding-top: 5px;
   font-family: "Open Sans Condensed", arial;
- 
+ margin: 0;
 
 }
 
@@ -178,7 +205,7 @@ p{
 }
 
 .w-30{
-  max-width: 20%;
+  min-width: 20%;
   padding-left: 2%;
   min-height: 100vh;
   padding-right: 2%;
@@ -196,9 +223,10 @@ p{
 
 .hidden{
   opacity: 0;
-  display: none!important;
+  display: none;
  
 }
+
 .rotateicon{
   transition: all 0.4s ease-in-out;
   transform: rotateZ(180deg);
@@ -289,8 +317,9 @@ p{
   width: 100%;
   padding: 5%;
   @media  (min-width: 1px) and (max-width: 425px) {
-    padding: 20% 0%;
+    padding: 25% 0%;
     height: 100vh;
+    padding-bottom: 0px;
     }
 }
 
@@ -303,8 +332,10 @@ p{
 }
 
 #emptymessage{
+  padding-bottom: 1%;
   @media  (min-width: 1px) and (max-width: 425px) {
     padding: 0% 10%;
+    padding-bottom: 5%;
     }
 }
 .heading{
@@ -326,8 +357,12 @@ p{
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  padding: 0px 10px;
 }
 .notess{
  
  white-space: unset;
+ @media  (min-width: 1px) and (max-width: 425px) {
+  min-width: 250px;
+  }
 }
