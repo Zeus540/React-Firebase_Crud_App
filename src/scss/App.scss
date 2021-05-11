@@ -31,18 +31,30 @@ table{
   font-size: 20px;
   font-weight: bold;
 }
-#m,#h{
+#minutes,#hours{
   padding: 10px;
-    background: #dde3ea;
+    background: #598bc1;
+    color: white;
 }
 
 .titleAndClock{
   display: flex!important;
-    flex-direction: row;
+    flex-direction: row-reverse;
     width: 100%;
     justify-content: space-between;
+    padding: 2% 0%;
+    @media  (min-width: 1px) and (max-width: 425px) {
+      padding: 5% 10%;
+      }
 }
-  
+.Intro{
+  padding: 2% 0%;
+  width: 50%;
+  @media  (min-width: 1px) and (max-width: 425px) {
+    padding: 10% 10%;
+    width: 100%;
+    }
+}
 tr{
   min-width: 100%;
 }  

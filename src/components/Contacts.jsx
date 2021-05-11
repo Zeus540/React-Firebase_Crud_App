@@ -180,16 +180,16 @@ const onDelete = id => {
 function alerts(key){
  
     var newids =  document.getElementById(key+2)
-    var newids4 =  document.getElementById(key+4)
+
 if(textHidden === true){
     newids.style.opacity = "1"
     newids.style.display = "block"
-    newids4.style.background = "#598bc1"
+ 
     textHidden = false
 }else{
     newids.style.opacity = "0"
     newids.style.display = "none"
-    newids4.style.background = "#dde3ea"
+
     textHidden = true
 }
     
@@ -218,10 +218,21 @@ if(TasksObjects[key].priority === "Low"){
 
 function date(){
     var a = new Date()
-   var h = document.getElementById("h").innerHTML = a.getHours();
-   var m = document.getElementById("m").innerHTML = a.getMinutes()
- 
-   
+   var h = document.getElementById("hours").innerHTML = a.getHours();
+
+   var m  = a.getMinutes()
+   var day  = a.getDay()
+   var month  = a.toLocaleString('default', { month: 'long' })
+   var year  = a.getFullYear()
+   var day = document.getElementById("day").innerHTML = day;
+   var month = document.getElementById("month").innerHTML = month;
+   var year = document.getElementById("year").innerHTML = year;
+   console.log(day)
+ if(m < 10){
+    m = document.getElementById("minutes").innerHTML = "0" + m
+ }else{
+    m = document.getElementById("minutes").innerHTML = " " + m
+ }
 } 
 
 setTimeout(() =>{
@@ -264,12 +275,14 @@ setTimeout(() =>{
                    
 
                     <div className="taskHolder">
-                   
-                  <div className="titleAndClock">
+                    <div className="titleAndClock">
+                
+                <div className="clock"><span id="hours"></span> : <span id="minutes"></span></div>
+                <div className="clock"><span id="day"></span> <span id="month"></span> <span id="year"></span></div>
+              </div>
+                   <p className="Intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+               
                   <h1 className="display-4 taskHolderHeading">ACTIVE TASKS</h1>
-                    <div className="clock"><span id="h"></span> : <span id="m"></span></div>
-                  </div>
-                  
 
                     <div className="emptyMessage" id="emptymessage">You have currently have <span id="taskTotal">{taskAmount}</span> active tasks</div>
                 <div className="FlexCard ">
