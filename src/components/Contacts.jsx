@@ -4,44 +4,42 @@ import firebaseDb from "../firebase";
 
 
 
+
 const Contacts = () => {
     
     var answer = "";    
     var newId = ""; 
     var isOpen = false;
-    var textHidden = true;
+    var textHidden = false;
     var isOpenIcon = "<";
     let iconbtn = document.getElementById("iconBtn");
     let icon = document.getElementById("icon");
     var popUp = document.getElementById("popup");
     var sideBar = document.getElementById("sidebar");
 
-   
-
- 
 
 	var [currentId, setCurrentId] = useState('');
-    var [RelatedPersonsObjects, setRelatedPersonsObjects] = useState({})
+    var [TasksObjects, setTasksObjects] = useState({})
     var [CounterObjects,  setCounterObjects] = useState({})
-   
-    var an = Object.values(CounterObjects)[0]
+    var taskAmount = Object.values(CounterObjects)[0]
     
-    //Once components load complete
-  
 
+    ////////////////////////////
     useEffect(() => {
       
-        firebaseDb.child('RelatedPersons').on('value', snapshot => {
+        firebaseDb.child('Tasks').on('value', snapshot => {
             if (snapshot.val() != null){
-                setRelatedPersonsObjects({
+                setTasksObjects({
                     ...snapshot.val()
                 })
+              
             }
                 else{
-                setRelatedPersonsObjects({})
+                setTasksObjects({})
                 }
         })
     }, [])
+//////////////////////////
 
     useEffect(() => {
         firebaseDb.child('Score').on('value', snapshot => {
@@ -57,28 +55,28 @@ const Contacts = () => {
         })
     }, [])
 
+///////////////////////////////////
     function Increment() {
-        let plus = an + 1
+        let plus = taskAmount + 1
         firebaseDb.child(`Score/Count`).set(plus)
         console.log(plus)
        
       }
 
       function Decrement() {
-        let minus = an - 1
+        let minus = taskAmount - 1
         firebaseDb.child(`Score/Count`).set(minus)
         console.log(minus)
 
       }
-    
-    
+//////////////////////////////////////////////////
 
     const addOrEdit = (obj) => {
        
       if (currentId === '')
      
      
-          firebaseDb.child('RelatedPersons').push(
+          firebaseDb.child('Tasks').push(
               obj,
               err => {
                   if (err)
@@ -90,7 +88,7 @@ const Contacts = () => {
                       Close()
               })
       else
-          firebaseDb.child(`RelatedPersons/${currentId}`).set(
+          firebaseDb.child(`Tasks/${currentId}`).set(
               obj,
               err => {
                   if (err)
@@ -101,13 +99,14 @@ const Contacts = () => {
               })
   }
 
- 
+ /////////////////////////////////
   const onDeletePopUp = (id) => {
     popUp.classList.add("popUpActive")
     popUp.classList.add("popUpActive")
     newId = id
     
 }
+//////////////////////////////////
 
 const Open = () => {
    
@@ -127,6 +126,7 @@ const Open = () => {
     isOpen = false
    }
  }
+////////////////////////////////////
 
  const EditOpen = () => {
     iconbtn.classList.add("iconbtn")
@@ -134,33 +134,34 @@ const Open = () => {
      sideBar.classList.remove("hidden")
      isOpen = true
      icon.classList.add("rotateicon")
-  
-    
   }
+  ///////////////////////////////////
+
   const Close = () => {
-      
     iconbtn.classList.remove("iconbtn")
     icon.classList.remove("iconb")
      sideBar.classList.add("hidden")
      isOpen = true
      icon.classList.remove("rotateicon")
-  
-    
   }
-const Yes = (id) => {
+  ////////////////////////////////////////
+
+const Yes = () => {
     answer = true;
     popUp.classList.remove("popUpActive")
     onDelete(newId)
  }
+///////////////////////////////////////////
 
  const No = () => {
     popUp.classList.remove("popUpActive")
  }
- 
+ ////////////////////////////////////////////
+
 const onDelete = id => {
     
     if (answer === true) {
-        firebaseDb.child(`RelatedPersons/${id}`).remove(
+        firebaseDb.child(`Tasks/${id}`).remove(
             err => {
                 if (err)
                     console.log(err)
@@ -172,27 +173,64 @@ const onDelete = id => {
     }
     
 }
-
+///////////////////////////////////////////
 
   
+
 function alerts(key){
-  
-    console.log(RelatedPersonsObjects[key].priority.toString())
-    console.log(key)
+ 
     var newids =  document.getElementById(key+2)
+    var newids4 =  document.getElementById(key+4)
 if(textHidden === true){
     newids.style.opacity = "1"
     newids.style.display = "block"
+    newids4.style.background = "#598bc1"
     textHidden = false
 }else{
     newids.style.opacity = "0"
     newids.style.display = "none"
+    newids4.style.background = "#dde3ea"
     textHidden = true
 }
-  
     
+}
+////////////////////////////////////////
+
+
+
+function check(key){
+  var newids3 =  document.getElementById(key+3)
+  newids3.style.height = "4px"
+ 
+  if(TasksObjects[key].priority === "High"){
+    newids3.style.background = "#f44336"
    
 }
+if(TasksObjects[key].priority === "Medium"){
+    newids3.style.background = "#ff9800"
+    
+}
+if(TasksObjects[key].priority === "Low"){
+    newids3.style.background = "#ffc107"
+ 
+}
+}
+
+function date(){
+    var a = new Date()
+   var h = document.getElementById("h").innerHTML = a.getHours();
+   var m = document.getElementById("m").innerHTML = a.getMinutes()
+ 
+   
+} 
+
+setTimeout(() =>{
+    date()
+    setInterval(() => {
+        date()
+    }, 60000);
+
+}, 0)
 
 
 
@@ -213,7 +251,7 @@ if(textHidden === true){
                     <h1 className="display-4 text-center heading" >OGM MEDIA</h1>
                     <p className=" text-center">Log your task below</p>
 
-                    <ContactForm {...({ currentId, RelatedPersonsObjects, addOrEdit ,Close})} ></ContactForm>
+                    <ContactForm {...({ currentId, TasksObjects, addOrEdit ,Close})} ></ContactForm>
 
                 </div>
              
@@ -223,13 +261,20 @@ if(textHidden === true){
                          </div>
                     </div>
                    
+                   
 
                     <div className="taskHolder">
-                    <h1 className="display-4 taskHolderHeading">ACTIVE TASKS</h1>
-                    <div className="emptyMessage" id="emptymessage">You have currently have {an} active tasks</div>
+                   
+                  <div className="titleAndClock">
+                  <h1 className="display-4 taskHolderHeading">ACTIVE TASKS</h1>
+                    <div className="clock"><span id="h"></span> : <span id="m"></span></div>
+                  </div>
+                  
+
+                    <div className="emptyMessage" id="emptymessage">You have currently have <span id="taskTotal">{taskAmount}</span> active tasks</div>
                 <div className="FlexCard ">
         
-                <table >
+                <table  >
                                        <tbody>
                                            <tr className="t-head">
                                                <td className="t-d">         <i className="fas fa-tasks white"></i>Task</td>
@@ -242,38 +287,42 @@ if(textHidden === true){
                                           
                 {
                    
-                  
-                                Object.keys(RelatedPersonsObjects).map((key) => (
+                 
+                                Object.keys(TasksObjects).map((key) => (
                                     
-                                    
+                                    setTimeout(function(){check(key)}, 0),
                                            
-                                           <tr valign="top" key={key} id={key}  >
+                                           <tr valign="top" key={key} id={key + 4} className="tr-active" onClick={() => { alerts(key)}}>
                                       
                                             <td >
-                                               <p >{RelatedPersonsObjects[key].task}</p>
+                                               <p >{TasksObjects[key].task}</p>
                                             </td>
 
-                                               <td>
-                                               <p >{RelatedPersonsObjects[key].priority}</p>
+                                               <td >
+                                               <p >{TasksObjects[key].priority}</p>
+                                                <div id={key + 3}></div>
+                                             
+                                              
+                                              
                                                </td>
                                             
                                                
 
                                                <td className="notess"  >
 
-                                                <p onClick={() => { alerts(key)}}>Read Note</p>
+                                                <p >Read Note</p>
 
-                                                <p id={key + 2} className="hidden">{RelatedPersonsObjects[key].notes}</p>
+                                                <p id={key + 2} className="hidden">{TasksObjects[key].notes}</p>
                                                 </td>
 
-                                                <td>
+                                                <td >
                                               
-                                               <p >{RelatedPersonsObjects[key].status}</p>
+                                               <p >{TasksObjects[key].status}</p>
                                                </td>
 
                                                <td>
                                               
-                                               <p >{RelatedPersonsObjects[key].domain}</p>
+                                               <p >{TasksObjects[key].domain}</p>
                                                </td>
                                       
                                                
@@ -306,6 +355,7 @@ if(textHidden === true){
                                 </tbody>
                                    </table>
                              </div>
+                  
                              </div>
                              
         </div>

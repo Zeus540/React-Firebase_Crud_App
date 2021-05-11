@@ -15,6 +15,10 @@ html,body{
   background: #f3f3f3!important;
   
 }
+p{
+  margin: 0!important;
+  padding: 0;
+}
 .btn-primary{
   margin: 0!important;
   padding: 0px 40px;
@@ -23,8 +27,29 @@ table{
   width: 100%;
 
 }
+.clock{
+  font-size: 20px;
+  font-weight: bold;
+}
+#m,#h{
+  padding: 10px;
+    background: #dde3ea;
+}
+
+.titleAndClock{
+  display: flex!important;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+  
 tr{
   min-width: 100%;
+}  
+.tr-active{
+  &:hover{
+    background: #598bc1;
+  }
 }  
 
 td{
@@ -39,7 +64,7 @@ td{
 
 h5{
  
-  color: #0067d6!important;
+  color: #598bc1!important;
   font-family: 'Open Sans Condensed', arial;
 }
   
@@ -62,7 +87,7 @@ input,select{
    
 }
 option{
-  background:#0067d6!important;
+  background:#598bc1!important;
     border: none!important;
     color:white!important;
     height: 45px!important;
@@ -168,14 +193,14 @@ margin-bottom: 0;
 
 .fa, .fas {
   font-weight: 900;
-  color: #0067d6;
+  color: #598bc1;
 }
 
 .far {
   color: rgb(224, 10, 10)!important;
 }
 .t-head{
-  background: #0067d6;
+  background: #598bc1;
   color: white;
  
 }
@@ -209,7 +234,7 @@ p{
   padding-left: 2%;
   min-height: 100vh;
   padding-right: 2%;
-  background: #0067d6;
+  background: #598bc1;
  top: 0;
  @media  (min-width: 1px) and (max-width: 425px) {
   min-width: 100%;
@@ -233,7 +258,7 @@ p{
 }
 #iconBtn{
   transition: all 0.5s ease-in-out;
-  background: #0067d6;
+  background: #598bc1;
   border: none;
   position: absolute;
   top: 0;
@@ -249,7 +274,7 @@ p{
   transition: all 0.4s ease-in-out!important;
 }
 .iconb{
-  color: #0067d6!important;
+  color: #598bc1!important;
 
 }
 .iconbtn{
@@ -308,7 +333,7 @@ p{
   margin-left: 0;
   transition: all 0.1s ease-in-out;
   &:hover{
-    background: #0067d6;
+    background: #598bc1;
   }
 }
 .taskHolder{
@@ -322,9 +347,13 @@ p{
     padding-bottom: 0px;
     }
 }
-
+#taskTotal{
+  color: #598bc1;
+  font-weight: bold;
+}
 .taskHolderHeading{
-  color: #0067d6!important;
+  color: #202020!important;
+  font-weight: bold;
 
   @media  (min-width: 1px) and (max-width: 425px) {
     padding: 0% 10%;

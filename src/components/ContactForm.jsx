@@ -18,9 +18,9 @@ const ContactForm = (props) => {
             setValues({ ...initialFieldValues })
         else
             setValues({
-                ...props.RelatedPersonsObjects[props.currentId]
+                ...props.TasksObjects[props.currentId]
             })
-    }, [props.currentId, props.RelatedPersonsObjects])
+    }, [props.currentId, props.TasksObjects])
 
     const handleInputChange = e => {
         var { name, value } = e.target;
