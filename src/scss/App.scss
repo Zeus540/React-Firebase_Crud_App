@@ -351,7 +351,7 @@ p{
   padding: 5%;
   @media  (min-width: 1px) and (max-width: 425px) {
     padding: 25% 0%;
-    height: 100vh;
+    min-height: 100vh;
     padding-bottom: 0px;
     }
 }
