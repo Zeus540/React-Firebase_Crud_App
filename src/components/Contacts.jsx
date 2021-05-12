@@ -18,12 +18,83 @@ const Contacts = () => {
     var sideBar = document.getElementById("sidebar");
 
 
-	var [currentId, setCurrentId] = useState('');
+    var [currentId, setCurrentId] = useState('');
     var [TasksObjects, setTasksObjects] = useState({})
+    var [TasksToDoObjects, setTasksToDoObjects] = useState({})
+    var [TasksCompleteObjects, setTasksCompleteObjects] = useState({})
+    var [TasksTestingObjects, setTasksTestingObjects] = useState({})
+    var [TasksInProgressObjects, setTasksInProgressObjects] = useState({})
     var [CounterObjects,  setCounterObjects] = useState({})
     var taskAmount = Object.values(CounterObjects)[0]
     
+    //////////////////////////////////////
+    useEffect(() => {
+      
+        firebaseDb.child(`Tasks`).orderByChild('status').equalTo('Complete').on('value', snapshot =>{
+            if (snapshot.val() != null){
+                setTasksCompleteObjects({
+                    ...snapshot.val()
+                })
+              
+            }
+                else{
+                    setTasksCompleteObjects({})
+                }
+        })
+    }, [])
+    ////////////////////////////
 
+    //////////////////////////////////////
+    useEffect(() => {
+      
+        firebaseDb.child(`Tasks`).orderByChild('status').equalTo('To-Do').on('value', snapshot =>{
+            if (snapshot.val() != null){
+                setTasksToDoObjects({
+                    ...snapshot.val()
+                })
+              
+            }
+                else{
+                    setTasksToDoObjects({})
+                }
+        })
+    }, [])
+    ////////////////////////////
+
+        
+    //////////////////////////////////////
+    useEffect(() => {
+      
+        firebaseDb.child(`Tasks`).orderByChild('status').equalTo('Testing').on('value', snapshot =>{
+            if (snapshot.val() != null){
+                setTasksTestingObjects({
+                    ...snapshot.val()
+                })
+              
+            }
+                else{
+                    setTasksTestingObjects({})
+                }
+        })
+    }, [])
+    ////////////////////////////
+
+        
+    //////////////////////////////////////
+    useEffect(() => {
+      
+        firebaseDb.child(`Tasks`).orderByChild('status').equalTo('In-Progress').on('value', snapshot =>{
+            if (snapshot.val() != null){
+                setTasksInProgressObjects({
+                    ...snapshot.val()
+                })
+              
+            }
+                else{
+                    setTasksInProgressObjects({})
+                }
+        })
+    }, [])
     ////////////////////////////
     useEffect(() => {
       
@@ -282,9 +353,9 @@ setTimeout(() =>{
               </div>
                    <p className="Intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                
-                  <h1 className="display-4 taskHolderHeading">ACTIVE TASKS</h1>
+                  <h1 className="display-4 taskHolderHeading">ALL TASKS</h1>
 
-                    <div className="emptyMessage" id="emptymessage">You have currently have <span id="taskTotal">{taskAmount}</span> active tasks</div>
+                    <div className="emptyMessage" id="emptymessage">You have currently have <span id="taskTotal">{taskAmount}</span>  tasks</div>
                 <div className="FlexCard ">
         
                 <table  >
@@ -368,7 +439,343 @@ setTimeout(() =>{
                                 </tbody>
                                    </table>
                              </div>
-                  
+                             <h1 className="display-4 taskHolderHeading">COMPLETE </h1>
+                             <div className="FlexCard ">
+        
+        <table  >
+                               <tbody>
+                                   <tr className="t-head">
+                                       <td className="t-d">         <i className="fas fa-tasks white"></i>Task</td>
+                                       <td>  <i className="fas fa-bell white "></i>Priority</td>
+                                       <td>  <i className="fas fa-comment white"></i>Notes</td>
+                                       <td> <i className="fas fa-spinner white"></i>Status</td>
+                                       <td> <i className="fa fa-server white"></i>Server</td>
+                                       <td></td>
+                                   </tr>
+                                  
+        {
+           
+         
+                        Object.keys(TasksCompleteObjects).map((key) => (
+                            
+                            
+                                   
+                                   <tr valign="top" key={key}  className="tr-active" >
+                              
+                                    <td >
+                                       <p >{TasksCompleteObjects[key].task}</p>
+                                    </td>
+
+                                       <td >
+                                       <p >{TasksCompleteObjects[key].priority}</p>
+                                        <div ></div>
+                                     
+                                      
+                                      
+                                       </td>
+                                    
+                                       
+
+                                       <td className="notess"  >
+
+                                        <p >Read Note</p>
+
+                                        <p  >{TasksCompleteObjects[key].notes}</p>
+                                        </td>
+
+                                        <td >
+                                      
+                                       <p >{TasksCompleteObjects[key].status}</p>
+                                       </td>
+
+                                       <td>
+                                      
+                                       <p >{TasksCompleteObjects[key].domain}</p>
+                                       </td>
+                              
+                                       
+                                  
+                                       
+
+                                       <td align="left">  
+                                      
+                                           <button className="btn clear " onClick={() => { setCurrentId(key) ; EditOpen() }} >
+                                            <i className="fas fa-pencil-alt"></i>
+                                        </button>
+                                  
+                                        <button className="btn clear " onClick={() => { onDeletePopUp(key) }}>
+                                   <i className="far fa-trash-alt"></i>
+                               </button>
+
+                                    </td>
+                                  
+                                  </tr>
+                         
+                          
+                         
+                        ))
+                        
+                            
+                           
+                    }
+                        
+                        
+                        </tbody>
+                           </table>
+                     </div>
+                     <h1 className="display-4 taskHolderHeading">TO-DO</h1>
+                             <div className="FlexCard ">
+        
+        <table  >
+                               <tbody>
+                                   <tr className="t-head">
+                                       <td className="t-d">         <i className="fas fa-tasks white"></i>Task</td>
+                                       <td>  <i className="fas fa-bell white "></i>Priority</td>
+                                       <td>  <i className="fas fa-comment white"></i>Notes</td>
+                                       <td> <i className="fas fa-spinner white"></i>Status</td>
+                                       <td> <i className="fa fa-server white"></i>Server</td>
+                                       <td></td>
+                                   </tr>
+                                  
+        {
+           
+         
+                        Object.keys(TasksToDoObjects).map((key) => (
+                            
+                            
+                                   
+                                   <tr valign="top" key={key}  className="tr-active" >
+                              
+                                    <td >
+                                       <p >{TasksToDoObjects[key].task}</p>
+                                    </td>
+
+                                       <td >
+                                       <p >{TasksToDoObjects[key].priority}</p>
+                                        <div ></div>
+                                     
+                                      
+                                      
+                                       </td>
+                                    
+                                       
+
+                                       <td className="notess"  >
+
+                                        <p >Read Note</p>
+
+                                        <p  >{TasksToDoObjects[key].notes}</p>
+                                        </td>
+
+                                        <td >
+                                      
+                                       <p >{TasksToDoObjects[key].status}</p>
+                                       </td>
+
+                                       <td>
+                                      
+                                       <p >{TasksToDoObjects[key].domain}</p>
+                                       </td>
+                              
+                                       
+                                  
+                                       
+
+                                       <td align="left">  
+                                      
+                                           <button className="btn clear " onClick={() => { setCurrentId(key) ; EditOpen() }} >
+                                            <i className="fas fa-pencil-alt"></i>
+                                        </button>
+                                  
+                                        <button className="btn clear " onClick={() => { onDeletePopUp(key) }}>
+                                   <i className="far fa-trash-alt"></i>
+                               </button>
+
+                                    </td>
+                                  
+                                  </tr>
+                         
+                          
+                         
+                        ))
+                        
+                            
+                           
+                    }
+                        
+                        
+                        </tbody>
+                           </table>
+                     </div>
+                     <h1 className="display-4 taskHolderHeading">TESTING</h1>
+                     <div className="FlexCard ">
+        
+        <table  >
+                               <tbody>
+                                   <tr className="t-head">
+                                       <td className="t-d">         <i className="fas fa-tasks white"></i>Task</td>
+                                       <td>  <i className="fas fa-bell white "></i>Priority</td>
+                                       <td>  <i className="fas fa-comment white"></i>Notes</td>
+                                       <td> <i className="fas fa-spinner white"></i>Status</td>
+                                       <td> <i className="fa fa-server white"></i>Server</td>
+                                       <td></td>
+                                   </tr>
+                                  
+        {
+           
+         
+                        Object.keys(TasksTestingObjects).map((key) => (
+                            
+                            
+                                   
+                                   <tr valign="top" key={key}  className="tr-active" >
+                              
+                                    <td >
+                                       <p >{TasksTestingObjects[key].task}</p>
+                                    </td>
+
+                                       <td >
+                                       <p >{TasksTestingObjects[key].priority}</p>
+                                        <div ></div>
+                                     
+                                      
+                                      
+                                       </td>
+                                    
+                                       
+
+                                       <td className="notess"  >
+
+                                        <p >Read Note</p>
+
+                                        <p  >{TasksTestingObjects[key].notes}</p>
+                                        </td>
+
+                                        <td >
+                                      
+                                       <p >{TasksTestingObjects[key].status}</p>
+                                       </td>
+
+                                       <td>
+                                      
+                                       <p >{TasksTestingObjects[key].domain}</p>
+                                       </td>
+                              
+                                       
+                                  
+                                       
+
+                                       <td align="left">  
+                                      
+                                           <button className="btn clear " onClick={() => { setCurrentId(key) ; EditOpen() }} >
+                                            <i className="fas fa-pencil-alt"></i>
+                                        </button>
+                                  
+                                        <button className="btn clear " onClick={() => { onDeletePopUp(key) }}>
+                                   <i className="far fa-trash-alt"></i>
+                               </button>
+
+                                    </td>
+                                  
+                                  </tr>
+                         
+                          
+                         
+                        ))
+                        
+                            
+                           
+                    }
+                        
+                        
+                        </tbody>
+                           </table>
+                     </div>
+                     <h1 className="display-4 taskHolderHeading">IN-PROGRESS</h1>
+                     <div className="FlexCard ">
+        
+        <table  >
+                               <tbody>
+                                   <tr className="t-head">
+                                       <td className="t-d">         <i className="fas fa-tasks white"></i>Task</td>
+                                       <td>  <i className="fas fa-bell white "></i>Priority</td>
+                                       <td>  <i className="fas fa-comment white"></i>Notes</td>
+                                       <td> <i className="fas fa-spinner white"></i>Status</td>
+                                       <td> <i className="fa fa-server white"></i>Server</td>
+                                       <td></td>
+                                   </tr>
+                                  
+        {
+           
+         
+                        Object.keys(TasksInProgressObjects).map((key) => (
+                            
+                            
+                                   
+                                   <tr valign="top" key={key}  className="tr-active" >
+                              
+                                    <td >
+                                       <p >{TasksInProgressObjects[key].task}</p>
+                                    </td>
+
+                                       <td >
+                                       <p >{TasksInProgressObjects[key].priority}</p>
+                                        <div ></div>
+                                     
+                                      
+                                      
+                                       </td>
+                                    
+                                       
+
+                                       <td className="notess"  >
+
+                                        <p >Read Note</p>
+
+                                        <p  >{TasksInProgressObjects[key].notes}</p>
+                                        </td>
+
+                                        <td >
+                                      
+                                       <p >{TasksInProgressObjects[key].status}</p>
+                                       </td>
+
+                                       <td>
+                                      
+                                       <p >{TasksInProgressObjects[key].domain}</p>
+                                       </td>
+                              
+                                       
+                                  
+                                       
+
+                                       <td align="left">  
+                                      
+                                           <button className="btn clear " onClick={() => { setCurrentId(key) ; EditOpen() }} >
+                                            <i className="fas fa-pencil-alt"></i>
+                                        </button>
+                                  
+                                        <button className="btn clear " onClick={() => { onDeletePopUp(key) }}>
+                                   <i className="far fa-trash-alt"></i>
+                               </button>
+
+                                    </td>
+                                  
+                                  </tr>
+                         
+                          
+                         
+                        ))
+                        
+                            
+                           
+                    }
+                        
+                        
+                        </tbody>
+                           </table>
+                     </div>
+
                              </div>
                              
         </div>

@@ -29,12 +29,13 @@ table{
 }
 .clock{
   font-size: 20px;
-  font-weight: bold;
+ 
 }
 #minutes,#hours{
   padding: 10px;
     background: #598bc1;
     color: white;
+    border-radius: 5px;
 }
 
 .titleAndClock{
@@ -244,6 +245,7 @@ p{
   padding-right: 2%;
   background: #598bc1;
  top: 0;
+ position: fixed;
  @media  (min-width: 1px) and (max-width: 425px) {
   min-width: 100%;
   padding-bottom: 20%;
@@ -268,7 +270,7 @@ p{
   transition: all 0.5s ease-in-out;
   background: #598bc1;
   border: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   
@@ -365,6 +367,7 @@ p{
 
   @media  (min-width: 1px) and (max-width: 425px) {
     padding: 0% 10%;
+    font-size: 28px;
     }
 }
 
